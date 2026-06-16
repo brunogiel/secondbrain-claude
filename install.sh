@@ -65,13 +65,13 @@ for s in "${SKILLS_MOTOR[@]}"; do fetch ".claude/skills/${s}/SKILL.md" "motor/${
 mkdir -p "${TMP}/motor/actualizar"
 curl -fsSL "${RAW}/.claude/skills/actualizar/check-update.sh" -o "${TMP}/motor/actualizar/check-update.sh" 2>/dev/null || true
 # el método: piezas que el coach lleva adentro
-fetch "process/reference.md"          "bundle/reference.md"
-fetch "templates/proyecto-CLAUDE.md"  "bundle/plantilla-proyecto.md"
-fetch "templates/ejemplos.md"         "bundle/ejemplos.md"
+fetch ".claude/skills/second-brain-coach/reference.md"          "bundle/reference.md"
+fetch ".claude/skills/second-brain-coach/plantilla-proyecto.md" "bundle/plantilla-proyecto.md"
+fetch ".claude/skills/second-brain-coach/ejemplos.md"           "bundle/ejemplos.md"
 fetch "VERSION"                       "bundle/VERSION"
 fetch "CHANGELOG.md"                  "bundle/CHANGELOG.md"
-# el método: catálogo de skills de uso
-for s in "${SKILLS_USO[@]}"; do fetch "templates/skills/${s}/SKILL.md" "uso/${s}/SKILL.md"; done
+# el método: catálogo de skills de uso (vive bundled con el coach)
+for s in "${SKILLS_USO[@]}"; do fetch ".claude/skills/second-brain-coach/skills-disponibles/${s}/SKILL.md" "uso/${s}/SKILL.md"; done
 
 # ============ TU BRAIN (esta carpeta) ============
 for d in "0. Inbox" "1. Proyectos" "2. Áreas" "3. Recursos" "4. Archivo"; do mkdir -p "$d"; done
