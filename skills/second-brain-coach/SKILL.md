@@ -140,7 +140,7 @@ Solo con el OK.
 - **N4:** agendá `actualizar` como rutina + anotala en "Rutinas" del root. Otras rutinas que ya vienen en el kit: `auditar-sistema` (salud del sistema, tipo sábado) y `triage-mails` (digest del inbox, si conectaste Gmail).
 - **N5:** mové el código a su repo + dejá un puntero. Si programa, ofrecé crear/llenar `2. Áreas/yo/dev-prefs.md`.
 
-**El `soul.md` se llena solo, hablando.** No lo fuerces. Cuando en la charla aparezca algo de fondo del usuario (un valor, hacia dónde va, un patrón suyo), ofrecele guardarlo en `2. Áreas/yo/soul.md` (creálo si no está). Con su OK.
+**El `soul.md` se llena solo, hablando.** Es su hoja de personaje (identidad, verdades de base, cómo ve las cosas, voz y tono, límites): quién es el asistente cuando habla por él. No lo fuerces. Cuando en la charla aparezca algo de fondo (un valor, una opinión marcada, cómo quiere que suene, una línea que no se cruza), ofrecele guardarlo en `2. Áreas/yo/soul.md` (creálo si no está). Con su OK.
 
 ### Paso 7: Cerrá enseñando [LAT]
 > "Listo. Eso que armaste es tu primer <X>: <qué es / para qué sirve>. Cuando quieras, el próximo escalón es <Y>."
