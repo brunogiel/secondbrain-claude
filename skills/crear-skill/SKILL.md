@@ -20,7 +20,7 @@ Preguntá: ¿ya hiciste esta tarea 3 veces? Si no, avisá que es prematuro y ofr
 3. **[LAT]** Separá los pasos en DET (mecánico, se clava o lo hace un script) y LAT (criterio). Marcá cada uno.
 4. **[LAT]** Qué archivos lee y escribe (para no pisar nada por accidente).
 5. **[LAT]** Cómo se ve un buen resultado: qué devuelve + 2 o 3 señales de que salió bien.
-6. **[DET]** Escribí el `SKILL.md` en `.claude/skills/<nombre>/SKILL.md` **de la carpeta del usuario** (sus skills viven en su SB y viajan con él, no son globales como los del kit).
+6. **[DET]** Escribí el `SKILL.md` en `skills/<nombre>/SKILL.md` **de la carpeta del usuario**, a la vista (los ve y los edita; los del kit, en cambio, viven globales y ocultos). Después anotalo en la sección "Mis skills" del `CLAUDE.md` raíz para que se rutee con una frase.
 
 ## Errores que le hacés esquivar (de reference, sección 5)
 - Clonar un skill cambiando un dato: parametrizá, que tome el dato como entrada.

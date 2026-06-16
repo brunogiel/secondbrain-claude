@@ -41,7 +41,7 @@ Un `SKILL.md` en una carpeta, con:
 Empezás con skills. Lo demás viene después, cuando una tarea ya no te necesita ahí.
 
 ## Dónde viven
-Los skills que armás vos van en `.claude/skills/<nombre>/` de tu carpeta: son tuyos y viajan con tu SB. Los del kit (el motor del coach) viven globales en `~/.claude/skills/`.
+Los skills que armás vos van en `skills/<nombre>/` de tu carpeta: **a la vista**, los ves y los editás, y se rutean desde tu `CLAUDE.md` raíz (sección "Mis skills"). Los del kit (el motor del coach) viven globales y ocultos en `~/.claude/skills/`.
 
 ## Checklist antes de dar por hecho un skill
 - [ ] ¿Se dispara con frases reales tuyas?

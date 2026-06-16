@@ -20,7 +20,7 @@ Most people never write those files. This gives you the seed and a coach that wa
 curl -fsSL https://raw.githubusercontent.com/brunogiel/secondbrain-claude/main/install.sh | bash
 ```
 
-This creates your PARA folders, the essentials (your `CLAUDE.md` router and `ESTADO.md` at the root, your identity basics under `2. Áreas/yo/`), a hidden `.secondbrain/` for the machinery, and installs the kit skills globally (the engine, so the coach works everywhere). The skills you build later live in your folder and travel with it. The rest grows as you climb. Your folder stays clean: you only see your own stuff.
+This creates your PARA folders, the essentials (your `CLAUDE.md` router and `ESTADO.md` at the root, your identity basics under `2. Áreas/yo/`), a hidden `.secondbrain/` for the machinery, and installs the kit skills globally (the engine, so the coach works everywhere). The skills you build later live in a visible `skills/` folder in your SecondBrain, so you can see and edit them. The rest grows as you climb. Your folder stays clean: you only see your own stuff.
 
 Not on the terminal (e.g. Cowork desktop)? Download the zip or `git clone`, or just open Claude in the folder and say *"set up my system"*.
 

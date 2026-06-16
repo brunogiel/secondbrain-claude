@@ -18,7 +18,7 @@ Casi nadie escribe esos archivos. Esto te da la semilla y un coach que te lleva 
 curl -fsSL https://raw.githubusercontent.com/brunogiel/secondbrain-claude/main/install.sh | bash
 ```
 
-Te crea las carpetas PARA, lo esencial (tu router `CLAUDE.md` y el `ESTADO.md` en la raíz, tus básicos de identidad en `2. Áreas/yo/`), una carpeta oculta `.secondbrain/` para la maquinaria, e instala los skills del kit globales (el motor, para que el coach funcione en todos lados). Los skills que armás después viven en tu carpeta y viajan con ella. El resto crece a medida que subís. Tu carpeta queda limpia: ves solo lo tuyo.
+Te crea las carpetas PARA, lo esencial (tu router `CLAUDE.md` y el `ESTADO.md` en la raíz, tus básicos de identidad en `2. Áreas/yo/`), una carpeta oculta `.secondbrain/` para la maquinaria, e instala los skills del kit globales (el motor, para que el coach funcione en todos lados). Los skills que armás después viven en una carpeta visible `skills/` de tu SecondBrain, para que los veas y los edites. El resto crece a medida que subís. Tu carpeta queda limpia: ves solo lo tuyo.
 
 ¿No estás en la terminal (ej. Cowork desktop)? Bajá el zip o hacé `git clone`, o abrí Claude en la carpeta y decile *"armame el sistema"*.
 

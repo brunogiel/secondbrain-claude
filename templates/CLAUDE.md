@@ -19,6 +19,7 @@
 3. Si el pedido es de un proyecto, leé SOLO `1. Proyectos/<ese proyecto>/CLAUDE.md`, no todo el árbol.
 4. Datos personales o de cómo trabajo: `2. Áreas/yo/sobre-mi.md` y `2. Áreas/yo/como-trabajo.md`.
 5. La doctrina (cómo crece el sistema, skills, convenciones) vive en `.secondbrain/reference.md`. Leela solo cuando la necesites.
+6. Si una frase mía matchea un skill de `skills/`, leé su `SKILL.md` y seguilo.
 
 ## Quién soy
 - **Nombre:** <...>
@@ -40,6 +41,15 @@ Cuando tengas varios proyectos, esta tabla rutea al asistente apenas decís algo
 |---|---|
 | *(ejemplo)* "mis gastos del mes" | `1. Proyectos/Gastos/` |
 | `<tu frase típica>` | `<tu carpeta>` |
+
+## Mis skills (los ves, son tuyos)
+Los skills que vas armando viven en `skills/` (a la vista, los podés abrir y editar). Cuando decís una frase que matchea uno, tu asistente lee su `SKILL.md` y lo sigue. Anotalos acá para que sepa rutearlos.
+| Si digo… | Skill |
+|---|---|
+| *(ejemplo)* "¿hay updates?" | `skills/actualizar/` |
+| `<tu frase>` | `skills/<tu skill>/` |
+
+> Los skills del kit (el coach, redactar, etc.) son aparte: son el motor, viven globales y los invocás por nombre (ej. `/second-brain-coach`).
 
 ## Rutinas (lo que corre solo)
 Tareas que se ejecutan en horario, sin que estés. (Vacío hasta que armes la primera; el coach te ayuda.)

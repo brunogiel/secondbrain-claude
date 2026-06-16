@@ -118,7 +118,7 @@ Tu primer skill conviene que sea uno **útil y chico**: uno que chequee si este 
 
 Fijate cómo el paso 1 y el 3 son mecánicos (script) y el 2 es criterio (el asistente decide cómo contártelo y espera tu OK). Eso es DET vs LAT en vivo.
 
-**El `SKILL.md` mínimo** (en `.claude/skills/actualizar/SKILL.md`):
+**El `SKILL.md` mínimo** (en `skills/actualizar/SKILL.md`, a la vista en tu carpeta):
 
 ```
 ---
@@ -209,7 +209,7 @@ El truco del status: `ESTADO.md` es un archivo chico (nivel + proyectos activos 
 Para que tu carpeta se vea limpia, el sistema separa lo tuyo de su maquinaria:
 - **A la vista (lo tuyo):** tus carpetas PARA, tu identidad (`sobre-mi`, `como-trabajo`), tu progreso (`ESTADO.md`), y el `CLAUDE.md` raíz (router fino).
 - **Oculto (el proceso):** la carpeta `.secondbrain/` con esta doctrina (`reference.md`), los templates y el control de versión. Empieza con punto, así no se ve en Finder. Igual sincroniza por Drive/iCloud.
-- **El coach y los skills:** en `.claude/skills/`. El coach es la puerta de entrada.
+- **El motor (el coach y los skills del kit):** globales y ocultos en `~/.claude/skills/`. Los skills que armás vos van a la vista, en `skills/` de tu carpeta. El coach es la puerta de entrada.
 
 Vos solo ves lo que hacés. El proceso trabaja de fondo.
 
