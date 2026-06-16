@@ -41,7 +41,13 @@ Un `SKILL.md` en una carpeta, con:
 Empezás con skills. Lo demás viene después, cuando una tarea ya no te necesita ahí.
 
 ## Dónde viven
-Los skills que armás vos van en `skills/<nombre>/` de tu carpeta: **a la vista**, los ves y los editás, y se rutean desde tu `CLAUDE.md` raíz (sección "Mis skills"). Los del kit (el motor del coach) viven globales y ocultos en `~/.claude/skills/`.
+Los skills que armás vos van **a la vista** y se rutean desde tu `CLAUDE.md` raíz (sección "Mis skills"). Dos casos:
+- **Generales** (sirven a varios proyectos): en `skills/` en la raíz de tu SB.
+- **De un proyecto puntual**: adentro de ese proyecto, en `1. Proyectos/<proyecto>/skills/`.
+
+No van en `3. Recursos/`: ahí va material de referencia (como este mismo archivo), no las capacidades. Los skills son infraestructura del agente, por eso viven en su propia carpeta, no dentro de PARA.
+
+Los del kit (el motor del coach) son aparte: viven globales y ocultos en `~/.claude/skills/`.
 
 ## Checklist antes de dar por hecho un skill
 - [ ] ¿Se dispara con frases reales tuyas?
