@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.6.1
+- **`migrar-de-claude-projects` mejorado** (trabajo de una sesión paralela, integrado): suma el **camino export/bulk** para muchos Projects (con los límites reales del export oficial: todo-o-nada, los docs vienen como referencias no bytes, conversaciones como nodos `parent_message_uuid` a reconstruir, link de 24h), la **decisión PARA explícita** (Proyecto vs Área — muchos Claude Projects son Áreas), uso de `.secondbrain/plantilla-proyecto.md`, carpeta `historial/` para conversaciones, sección "Qué lee y escribe" y mejores señales de éxito.
+
 ## 2.6.0
 - **Skills de uso movidos a `templates/skills/`** (no son del motor, son lo que se instala en el SB del usuario). En el repo, `.claude/skills/` queda SOLO con el motor (coach + actualizar + migrar); los skills de uso son el catálogo-fuente en `templates/skills/`. `install.sh` los fetchea de ahí.
 - **Nuevo skill `evaluar-skill`** (versión genérica del eval-skill de Bruno): mide un skill contra su propio `SKILL.md` (la rúbrica) en una corrida real y propone mejoras sin aplicarlas. Cierra el loop de calidad. El coach lo ofrece cuando ya tenés varios skills.
