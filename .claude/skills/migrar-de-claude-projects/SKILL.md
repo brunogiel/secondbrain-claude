@@ -25,7 +25,7 @@ Los Projects de la app de Claude están cerrados: no se leen desde acá. Los tra
 1. **[LAT]** Pedile que elija UN Project para empezar.
 2. **[LAT]** ¿Esto es un **Proyecto** (objetivo + fecha, se termina) o un **Área** (no termina)? Eso decide la carpeta: `1. Proyectos/<nombre>/` o `2. Áreas/<nombre>/`. No asumas Proyecto: muchos Projects de Claude son Áreas.
 3. **[DET]** Pedile lo del Project: las custom instructions, los archivos de conocimiento (que los suba o pegue), y —opcional— las conversaciones que quiera conservar.
-4. **[LAT]** Armá `<carpeta>/CLAUDE.md` desde la plantilla `.secondbrain/plantilla-proyecto.md`: el contexto sale de las instructions reescritas a tu voz, más un log de decisiones que arranca hoy.
+4. **[LAT]** Armá `<carpeta>/CLAUDE.md` desde la plantilla `~/.claude/skills/second-brain-coach/plantilla-proyecto.md`: el contexto sale de las instructions reescritas a tu voz, más un log de decisiones que arranca hoy.
 5. **[DET]** Guardá los archivos de conocimiento en esa carpeta. Si trajo conversaciones, dejalas en `<carpeta>/historial/`.
 6. **[LAT]** Mostrale cómo quedó y confirmá antes de pasar al siguiente. No los batchees todos de una.
 
@@ -38,7 +38,7 @@ Los Projects de la app de Claude están cerrados: no se leen desde acá. Los tra
 6. **[LAT]** Repasá 2-3 carpetas a mano (ruteo + contexto) antes de dar por migrado el lote.
 
 ## Qué lee y escribe
-- **Lee:** lo que el usuario pega/sube, o el zip del export; y `.secondbrain/plantilla-proyecto.md`.
+- **Lee:** lo que el usuario pega/sube, o el zip del export; y `~/.claude/skills/second-brain-coach/plantilla-proyecto.md`.
 - **Escribe:** `1. Proyectos/<nombre>/` o `2. Áreas/<nombre>/` con su `CLAUDE.md` (+ `historial/` y los docs).
 - **No toca:** proyectos que ya viven en el sistema.
 

@@ -15,18 +15,18 @@ Es infraestructura del kit: ya viene hecho (a diferencia de los skills que armá
 ## Flujo
 1. **[DET]** Comparar versiones. En Claude Code corré el script `check-update.sh` de esta carpeta;
    en Cowork (sin terminal) hacé el mismo chequeo con tus herramientas: bajá el `VERSION` del repo
-   (`https://raw.githubusercontent.com/brunogiel/secondbrain-claude/main/VERSION`) y compará con `.secondbrain/VERSION`.
+   (`https://raw.githubusercontent.com/brunogiel/secondbrain-claude/main/VERSION`) y compará con `~/.claude/skills/second-brain-coach/VERSION`.
 2. **[LAT]** Si la publicada es más nueva: mostrá qué cambió (del `CHANGELOG` del repo) en 2-3 líneas
    y preguntá *"¿te la instalo?"*. No bajes nada sin un "dale".
 3. **[DET]** Con el OK: corré el `install.sh` del repo (vuelve a bajar el motor y los archivos del
-   kit; respeta lo tuyo, no pisa tus entregables). El `install.sh` ya refresca `.secondbrain/VERSION`
+   kit; respeta lo tuyo, no pisa tus entregables). El `install.sh` ya refresca `~/.claude/skills/second-brain-coach/VERSION`
    al número nuevo, no hace falta tocarlo a mano.
 
 Fijate que el paso 1 y el 3 son mecánicos (script) y el 2 es criterio (vos decidís). Eso es DET vs LAT en vivo.
 
 ## Qué lee y escribe
-- **Lee:** `.secondbrain/VERSION` (local) y el `VERSION` / `CHANGELOG.md` del repo.
-- **Escribe:** solo con tu OK, baja archivos del kit y actualiza `.secondbrain/VERSION`. Nunca toca tus
+- **Lee:** `~/.claude/skills/second-brain-coach/VERSION` (local) y el `VERSION` / `CHANGELOG.md` del repo.
+- **Escribe:** solo con tu OK, baja archivos del kit y actualiza `~/.claude/skills/second-brain-coach/VERSION`. Nunca toca tus
   carpetas PARA ni tus skills propios.
 
 ## Cuándo NO usar
@@ -35,5 +35,5 @@ Fijate que el paso 1 y el 3 son mecánicos (script) y el 2 es criterio (vos deci
 
 ## Señales de que salió bien
 - Sabés si estás al día o no, sin entrar a internet a mano.
-- Si actualizó, `.secondbrain/VERSION` quedó en el número nuevo.
+- Si actualizó, `~/.claude/skills/second-brain-coach/VERSION` quedó en el número nuevo.
 - Nada se bajó sin tu OK; tus cosas quedaron intactas.

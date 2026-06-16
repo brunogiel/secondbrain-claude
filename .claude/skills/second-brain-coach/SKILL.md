@@ -35,16 +35,15 @@ Cuidado con esta diferencia, es clave:
 
 O sea: cuando coacheás, hablás con tu voz. Cuando el usuario te pide una tarea suya (redactar, ordenar, lo que sea), seguís su `como-trabajo`. No le pintes tu tono a sus entregables, ni dejes que su tono te apague cuando lo estás guiando.
 
-## Dónde vive cada cosa (la regla, en 3 baldes)
-- **👁 VISIBLE en el SB (lo del usuario):** su contexto — `CLAUDE.md` raíz (router) + `ESTADO.md` + `AGENTS.md`, las carpetas `0. Inbox/` a `4. Archivo/`, la identidad en `2. Áreas/yo/` (`sobre-mi`, `como-trabajo`, `mi-estilo`, `MEMORIA`; `soul`/`dev-prefs` se suman cuando hacen falta) — y **`skills/`: los skills que USA**. Esos los ve, los abre, aprende cómo están. **No vienen todos de una:** se los vas sumando a `skills/` a medida que avanza (ver "Sumar un skill de uso"). Acá también caen los que arma él.
-- **🔒 OCULTO en el SB (el proceso, `.secondbrain/`):** `reference.md` (doctrina), `plantilla-proyecto.md`, el **catálogo** `skills-disponibles/` (las versiones-fuente de los skills de uso, de donde copiás a `skills/`), y `VERSION`/`CHANGELOG`. No lo expongas salvo que pregunte.
-- **🔒 GLOBAL e invisible (`~/.claude/skills/`): SOLO el motor de armado** — vos (el coach), `actualizar` y `migrar`. Se llaman por nombre (`/second-brain-coach`); no viven en la carpeta del usuario ni aparecen en su `skills/`. Vos no sos un skill de uso: sos motor.
+## Dónde vive cada cosa (la regla, en 2 baldes)
+- **👁 TU BRAIN (la carpeta del usuario) — solo lo suyo:** su contexto — `CLAUDE.md` raíz (router) + `ESTADO.md` + `ESCALERA.md` + `AGENTS.md`, las carpetas `0. Inbox/` a `4. Archivo/`, la identidad en `2. Áreas/yo/` (`sobre-mi`, `como-trabajo`, `mi-estilo`, `MEMORIA`; `soul`/`dev-prefs` se suman cuando hacen falta) — y **`skills/`: los skills que USA**. Esos los ve, los abre, aprende cómo están. **No vienen todos de una:** se los vas sumando a `skills/` a medida que avanza (ver "Sumar un skill de uso"). Acá también caen los que arma él. **Nada del método ensucia su carpeta.**
+- **🔒 EL MÉTODO (global, `~/.claude/skills/`) — se instala como una app, invisible:** vos (el coach) llevás tus piezas adentro de tu propia carpeta `~/.claude/skills/second-brain-coach/`: `reference.md` (doctrina), `plantilla-proyecto.md`, `ejemplos.md`, el **catálogo** `skills-disponibles/` (las fuentes de los skills de uso), `VERSION`/`CHANGELOG`. Más `actualizar` y `migrar`, sus propias carpetas. Se usa por nombre (`/second-brain-coach`); no vive en la carpeta del usuario.
 
 **Cómo se disparan los skills de uso (importante):** NO por `.claude/skills/`, sino por **la tabla "Mis skills" del `CLAUDE.md`**. El asistente lee el `CLAUDE.md` al arrancar; cuando el usuario dice una frase que matchea una fila (frase → skill), va y sigue `skills/<nombre>/SKILL.md`. Por eso `skills/` es una carpeta **a secas y visible** (sin `.claude/`, sin symlink), y por eso anda igual en **Claude Code, Cowork y Codex** (los tres leen el `CLAUDE.md`; en Codex vía `AGENTS.md`). El frontmatter del skill afina el disparo; la fila en la tabla es lo que lo hace existir para el asistente.
 
 ## Sumar un skill de uso (a medida que el usuario avanza)
-Los skills de uso vienen dormidos en el catálogo oculto `.secondbrain/skills-disponibles/`. Cuando el usuario llega al punto donde uno le sirve, **ofrecelo** (propone, vos decidís) y, con su OK:
-1. Copiá la carpeta del skill del catálogo a la vista: `.secondbrain/skills-disponibles/<nombre>/` → `skills/<nombre>/` (carpeta a secas).
+Los skills de uso vienen dormidos en tu catálogo (`~/.claude/skills/second-brain-coach/skills-disponibles/`). Cuando el usuario llega al punto donde uno le sirve, **ofrecelo** (propone, vos decidís) y, con su OK:
+1. Copiá la carpeta del skill del catálogo a la vista: `~/.claude/skills/second-brain-coach/skills-disponibles/<nombre>/` → `skills/<nombre>/` (en el brain del usuario, carpeta a secas).
 2. **Anotalo en la tabla "Mis skills" del `CLAUDE.md` raíz, con su frase gatillo.** Este paso NO es cosmético: es lo que hace que el skill se dispare (el asistente lo encuentra por la tabla, no por la carpeta). Sin la fila, el archivo está pero no se activa.
 3. Decile que ya lo tiene a la vista en `skills/`, que lo abra para ver cómo está, y con qué frase se dispara.
 
@@ -123,10 +122,10 @@ Cortas, en criollo. Base, no las recites textual.
 Saludá corto, con tu voz. Después, en este orden:
 
 **A) ¿De dónde venís? (4 situaciones)**
-- **(a) Ya tenés una carpeta donde trabajás con Claude (no es SecondBrain):** pedile que la abra acá o te diga dónde está. Analizala barato y **tachá la checklist** contra lo que ya hay. Decile dónde está parado y, con OK, **adoptala**: sumá solo lo que falta (el `.secondbrain/` oculto, un `CLAUDE.md` raíz fino o adaptás el suyo, `ESTADO.md`) **sin pisar nada**.
+- **(a) Ya tenés una carpeta donde trabajás con Claude (no es SecondBrain):** pedile que la abra acá o te diga dónde está. Analizala barato y **tachá la checklist** contra lo que ya hay. Decile dónde está parado y, con OK, **adoptala**: sumá solo lo que falta del contenido del brain (`CLAUDE.md` raíz fino o adaptás el suyo, `ESTADO.md`, `ESCALERA.md`, `AGENTS.md`, carpetas PARA) **sin pisar nada**. El método (vos + tus piezas) ya está global, no va en su carpeta.
 - **(b) Tenés proyectos en Claude (los Projects de la app, cerrados):** esos no los puedo leer solo. Migrémoslos a mano: por cada Project, pedile que te pegue sus instrucciones y te diga qué archivos/knowledge tiene. Convertí cada uno en `1. Proyectos/<nombre>/CLAUDE.md` + su contexto. Así tus Projects pasan a vivir en el sistema (y dejan de estar encerrados en la app). Para esto tenés el skill `migrar-de-claude-projects`.
 - **(c) Arrancás de cero:** "Creemos una carpeta para tu sistema. Poné el nombre que te guste (sugerencia: algo tipo *Second Brain* o *Mi Brain*; evitá llamarla 'Claude', porque el sistema no está atado a una herramienta). Dejala en **Google Drive** (o iCloud / Dropbox) así sincroniza entre tus dispositivos. ¿La creás vos y me decís cuál es, o la armo acá?" Ahí adentro armás la base (abajo).
-- **(d) Ya es un sistema SecondBrain** (existe `.secondbrain/` + `ESTADO.md`): no preguntes nada, saltá al Paso 1.
+- **(d) Ya es un sistema SecondBrain** (existen `ESTADO.md` + `ESCALERA.md` en la raíz): no preguntes nada, saltá al Paso 1.
 
 **B) Pedí permiso para leer tus últimas charlas (opcional, potente):**
 > "¿Me dejás chusmear tus últimas conversaciones con Claude? Con eso pesco quién sos, cómo trabajás y en qué andás metido, y te propongo el `sobre-mi`, el `como-trabajo` y un mapa de tus proyectos, en vez de hacerte llenar todo de cero."
@@ -137,10 +136,10 @@ Ofrecé/confirmá el **modo**. Guardá modo + cliente + la checklist en `ESTADO.
 
 **Bootstrap (casos a/b/c, con OK):**
 - Carpetas visibles: `0. Inbox/` (con su `INBOX.md`, el protocolo de captura) + PARA: `1. Proyectos/`, `2. Áreas/`, `3. Recursos/`, `4. Archivo/`. En `3. Recursos/` cae `arquitectura-skills.md` (la doctrina de skills, como Recurso visible).
-- Carpeta oculta `.secondbrain/` con `reference.md`, `plantilla-proyecto.md`, el catálogo `skills-disponibles/` (skills de uso dormidos) y `VERSION`/`CHANGELOG.md` (bajalos del repo si no están). Y la carpeta visible `skills/` (a secas), vacía al principio: ahí vas sumando los skills de uso, y se rutean desde la tabla "Mis skills" del `CLAUDE.md`.
+- El método (vos + tus piezas + `actualizar`/`migrar`) ya vive global en `~/.claude/skills/` — no va en la carpeta del usuario. En su brain solo creás la carpeta visible `skills/` (a secas), vacía al principio: ahí vas sumando los skills de uso, ruteados desde la tabla "Mis skills" del `CLAUDE.md`.
 - `CLAUDE.md` raíz fino (router) + `ESTADO.md` + `ESCALERA.md` (el tracker de progreso) + `AGENTS.md` (puntero para otros harnesses), en la raíz. Los básicos de identidad en PARA, en `2. Áreas/yo/`: `sobre-mi`, `como-trabajo`, `mi-estilo`, `MEMORIA`. `soul` y `dev-prefs` NO van de entrada: los creás ahí cuando hagan falta.
 
-> Si el usuario no tiene claro qué proyectos/áreas va a tener, mostrale el layout de su perfil en `.secondbrain/ejemplos.md` (freelancer / dueño de pyme / PM / básico) como inspiración para arrancar — nunca como molde a copiar.
+> Si el usuario no tiene claro qué proyectos/áreas va a tener, mostrale el layout de su perfil desde tus ejemplos (`~/.claude/skills/second-brain-coach/ejemplos.md`: freelancer / dueño de pyme / PM / básico) como inspiración para arrancar — nunca como molde a copiar.
 
 ### Paso 1: Mirá el estado [DET]
 Leé `ESTADO.md` y `ESCALERA.md` primero (son chicos). Después tachá la checklist con chequeos livianos (existencia / `<...>` / conteo), sin abrir todo el contenido. Mirá también qué hay en su `skills/` (los skills de uso que ya adoptó del catálogo + los que armó él) y si hay rutinas en la sección "Rutinas" del root. El motor (vos/`actualizar`/`migrar`) no cuenta acá: vive aparte.
@@ -168,7 +167,7 @@ Ejemplos: N0 "llenemos `sobre-mi` y `como-trabajo`, te hago 4 preguntas". N1 "cr
 ### Paso 6: Si dice que sí, hacelo (según el modo) [DET/LAT]
 Solo con el OK.
 - **N0:** preguntas y llená `2. Áreas/yo/sobre-mi` y `como-trabajo`.
-- **N1:** `1. Proyectos/<nombre>/CLAUDE.md` con contexto + log, usando la plantilla `.secondbrain/plantilla-proyecto.md` (Qué es / Cómo trabajar acá / Estado / Decisiones / Próximo paso / Links). Ofrecé la línea **"Cómo trabajar acá"** (la persona del asistente para ese proyecto: "sé escéptico", "sé breve", "paso a paso"); si no la quiere, se borra.
+- **N1:** `1. Proyectos/<nombre>/CLAUDE.md` con contexto + log, usando tu plantilla (`~/.claude/skills/second-brain-coach/plantilla-proyecto.md`: Qué es / Cómo trabajar acá / Estado / Decisiones / Próximo paso / Links). Ofrecé la línea **"Cómo trabajar acá"** (la persona del asistente para ese proyecto: "sé escéptico", "sé breve", "paso a paso"); si no la quiere, se borra.
 - **N2:** filas a la tabla de atajos.
 - **N3 (primer skill):** instalá `crear-skill` desde el catálogo a su `skills/` (con OK) — queda a la vista para que vea cómo está hecho un skill por dentro (frontmatter con las frases que disparan, pasos `[DET]`/`[LAT]`). Eso le enseña qué es un skill y qué es un script. Después, guiado por `crear-skill`, armá EL SUYO (algo que repita 3 veces, regla de 3) en `skills/<nombre>/SKILL.md`, y anotalo en la tabla "Mis skills" del `CLAUDE.md` raíz. Tu Recurso `3. Recursos/arquitectura-skills.md` es la referencia.
 - **N4:** agendá `actualizar` (motor, ya global) como rutina + anotala en "Rutinas" del root. Enseñá el log de corrida: que la rutina deje una línea al terminar (qué corrió, salió bien sí/no, cuándo), así sabés que anduvo sin estar mirando. Y sumá desde el catálogo, según le sirva: `auditar-sistema` (salud del sistema, tipo sábado) y `triage` (el brief del día: mail + calendario + chat/tareas, lo que tengas conectado por MCP). Quedan a la vista en `skills/`.

@@ -1,7 +1,7 @@
 <!--
   REFERENCE — el manual que crece (SecondBrain).
   Plantilla en español. No se lee de corrido: es consulta, vas a una sección cuando la necesitás.
-  Al instalar, este archivo vive OCULTO en .secondbrain/reference.md. El usuario no lo ve en Finder; el coach lo lee cuando hace falta.
+  Al instalar, este archivo vive global con el coach (~/.claude/skills/second-brain-coach/reference.md). El usuario no lo ve; el coach lo lee cuando hace falta.
 -->
 
 # reference.md: El manual
@@ -49,7 +49,7 @@ La distinción clave: **capturar no es archivar.** Si algo ya es claro y acciona
 
 ## 3. Cada proyecto tiene su propio cerebro
 
-Adentro de cada proyecto va un `CLAUDE.md` (hay una plantilla en `.secondbrain/plantilla-proyecto.md`) con:
+Adentro de cada proyecto va un `CLAUDE.md` (el coach trae una plantilla) con:
 - **Contexto:** qué es, quién participa, qué estado tiene, qué links importan.
 - **Cómo trabajar acá (opcional):** la "persona" del asistente para ESTE proyecto. Mismo modelo, distinto compañero: un proyecto de plata quiere uno escéptico que verifique números; uno de escritura, uno que no te corrija el tono. Dos líneas alcanzan ("sé escéptico", "sé breve", "paso a paso").
 - **Log de decisiones:** una línea con fecha cada vez que decidís algo importante. ("2026-06-01: elegimos X en vez de Y porque Z").
@@ -132,7 +132,7 @@ Después armá **el tuyo**: algo que repitas de verdad (regla de 3). Va en `skil
 Abajo, la anatomía del `actualizar` como modelo de lo que tiene que tener cualquier skill:
 
 **Qué hace (el patrón a copiar):**
-1. **[DET]** Leer la versión publicada del kit (el archivo `VERSION` del repo) y compararla con la tuya (`.secondbrain/VERSION`).
+1. **[DET]** Leer la versión publicada del kit (el archivo `VERSION` del repo) y compararla con la instalada (`~/.claude/skills/second-brain-coach/VERSION`).
 2. **[LAT]** Si hay una nueva, contarte qué cambió (del `CHANGELOG`) y preguntarte: *"¿te la instalo?"*.
 3. **[DET]** Si decís que sí, bajar lo nuevo.
 
@@ -152,9 +152,9 @@ description: >
 # actualizar: bajar las mejoras del kit
 
 ## Flujo
-1. [DET] Leé la versión publicada (VERSION del repo) y la local (.secondbrain/VERSION).
+1. [DET] Leé la versión publicada (VERSION del repo) y la instalada (~/.claude/skills/second-brain-coach/VERSION).
 2. [LAT] Si la publicada es más nueva: mostrá qué cambió (CHANGELOG) y preguntá "¿te la instalo?".
-3. [DET] Con el OK: bajá los archivos nuevos y actualizá .secondbrain/VERSION.
+3. [DET] Con el OK: bajá los archivos nuevos y actualizá la VERSION instalada.
 
 ## Cuándo NO usar
 - Para actualizar tus propios proyectos (esto es solo el kit).
@@ -230,17 +230,15 @@ El truco del status: `ESTADO.md` es un archivo chico (nivel + proyectos activos 
 
 ---
 
-## 14. Topología: proceso oculto, entregables a la vista
+## 14. Topología: el método es una app, tu brain son tus cosas
 
-La regla, en **3 baldes** (así tu carpeta se ve limpia y sabés qué es qué):
+La regla, en **2 baldes** (así tu carpeta se ve limpia y sabés qué es qué):
 
-1. **👁 VISIBLE en tu SB — lo tuyo.** Tu contexto: las carpetas PARA + `0. Inbox/`, tu identidad (`2. Áreas/yo/`), tu progreso (`ESTADO.md`), el `CLAUDE.md` raíz (router) + `AGENTS.md`. Y **`skills/`: los skills que usás** (redactar, anti-slop, triage, auditar, crear-skill, evaluar-skill + los que armes vos). Los ves, los abrís, aprendés cómo están. No vienen todos de una: el coach te los va sumando a medida que avanzás.
+1. **👁 TU BRAIN (esta carpeta) — solo lo tuyo.** Tu contexto: las carpetas PARA + `0. Inbox/`, tu identidad (`2. Áreas/yo/`), tu progreso (`ESTADO.md` + `ESCALERA.md`), el `CLAUDE.md` raíz (router) + `AGENTS.md`. Y **`skills/`: los skills que usás** (redactar, anti-slop, triage, auditar, crear-skill, evaluar-skill + los que armes vos). Los ves, los abrís, aprendés cómo están. No vienen todos de una: el coach te los va sumando a medida que avanzás. **Nada del método ensucia tu carpeta.**
 
-2. **🔒 OCULTO en tu SB — el proceso (`.secondbrain/`).** Esta doctrina (`reference.md`), la `plantilla-proyecto.md`, el **catálogo** `skills-disponibles/` (las versiones-fuente de los skills de uso, de donde el coach copia a `skills/` cuando adoptás uno) y el control de versión. Empieza con punto: no se ve en Finder, pero sincroniza igual.
+2. **🔒 EL MÉTODO (global, `~/.claude/skills/`) — se instala como una app.** El coach lleva sus piezas adentro de su propia carpeta (`~/.claude/skills/second-brain-coach/`): esta doctrina (`reference.md`), la `plantilla-proyecto.md`, los `ejemplos.md`, el **catálogo** `skills-disponibles/` (las fuentes de los skills de uso), y el control de versión. Más `actualizar` y `migrar`. Se usa por nombre (`/second-brain-coach`); no vive en tu carpeta.
 
-3. **🔒 GLOBAL e invisible (`~/.claude/skills/`) — solo el motor de armado.** El coach, `actualizar` y `migrar`. Se llaman por nombre (`/second-brain-coach`); no viven en tu carpeta ni aparecen en `skills/`. (En Cowork, sin global, el motor viaja dentro de la carpeta — el único caso en que está adentro.)
-
-Vos solo ves lo que usás. El proceso y el motor trabajan de fondo.
+El modelo es el de cualquier app: **instalás el método una vez por máquina (la "app"), y tu contenido (el brain) sincroniza por Drive.** Vos solo ves lo que usás; el método trabaja de fondo. (En Cowork, sin global, el método viaja dentro de la carpeta del kit que abrís.)
 
 > **Cómo se disparan (y por qué es portable).** Tus skills de uso viven en `skills/` a secas — carpeta normal, a la vista, sin nada oculto. Lo que los dispara es **la tabla "Mis skills" de tu `CLAUDE.md`**: tu asistente lee el `CLAUDE.md` al arrancar cada sesión y, cuando decís una frase que matchea una fila (frase → skill), va y sigue ese `skills/<nombre>/SKILL.md`. Por eso funcionan **igual en Claude Code, Cowork y Codex**: los tres leen el `CLAUDE.md` (en Codex, vía `AGENTS.md` que apunta ahí). No dependen de una carpeta `.claude/skills/` específica de Claude. La regla práctica: **un skill sin su fila en la tabla no existe para el asistente** — siempre anotalo.
 

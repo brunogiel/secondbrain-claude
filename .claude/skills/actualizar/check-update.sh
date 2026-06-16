@@ -7,10 +7,10 @@ set -euo pipefail
 
 REPO="brunogiel/secondbrain-claude"
 RAW="https://raw.githubusercontent.com/${REPO}/main"
-LOCAL_FILE=".secondbrain/VERSION"
+LOCAL_FILE="${HOME}/.claude/skills/second-brain-coach/VERSION"
 
 if [ ! -f "$LOCAL_FILE" ]; then
-  echo "No encuentro $LOCAL_FILE. ¿Estás parado en tu carpeta SecondBrain?"
+  echo "No encuentro $LOCAL_FILE. ¿Está instalado el método (corriste install.sh)?"
   exit 1
 fi
 

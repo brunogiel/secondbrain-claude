@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.8.0
+- **Todo el método a global; el SB queda con SOLO tu contenido (adiós `.secondbrain/`).** Dos baldes claros: el **método** se instala global (como una app) y tu **brain** (la carpeta) tiene solo lo tuyo.
+  - El **coach lleva sus piezas adentro** de su carpeta global (`~/.claude/skills/second-brain-coach/`): `reference.md`, `plantilla-proyecto.md`, `ejemplos.md`, el catálogo `skills-disponibles/` y `VERSION`/`CHANGELOG`. Es el patrón de archivos bundled que el propio kit predica.
+  - El SB del usuario ya **no tiene `.secondbrain/`**: solo `CLAUDE.md` + `ESTADO.md` + `ESCALERA.md` + `AGENTS.md`, las carpetas PARA + `0. Inbox`, la identidad, y `skills/` (los skills de uso, visibles).
+  - Trade-off: el brain deja de ser 100% autocontenido — el método se instala por máquina (app), tu contenido sincroniza por Drive. La portabilidad del contenido + los skills (tabla del `CLAUDE.md`) no se toca.
+- `install.sh`, coach, doctrina (`reference.md` §14), templates y READMEs reescritos al modelo de 2 baldes. `actualizar`/`check-update.sh` leen la `VERSION` instalada global (con `$HOME`, no `~` entre comillas).
+
 ## 2.7.1
 - **Sacados `abrir-sesion` y `cerrar-sesion`** del catálogo: el autor nunca los usó y su valor ya está cubierto por el coach + `ESTADO.md` + `ESCALERA.md`. El catálogo de skills de uso queda en **6** (redactar, anti-slop, triage, crear-skill, evaluar-skill, auditar-sistema). El "briefear al abrir" lo hace el coach; el "capturar al cerrar" pasa a ser un **hábito** (dejar `ESTADO.md` + "próximo paso" al día), no un skill ceremonial. Limpieza de referencias en coach, doctrina, templates y READMEs.
 - **Mapa definitivo:** motor del método (3, oculto/global, el usuario solo toca `/coach`) = `second-brain-coach` + `actualizar` + `migrar`. Skills de uso (6, visibles en el SB) = lo que el usuario usa en su trabajo.

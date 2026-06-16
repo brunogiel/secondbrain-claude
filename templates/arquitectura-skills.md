@@ -48,7 +48,7 @@ Regla de oro: **un skill sin su fila en la tabla no existe para el asistente.** 
 
 No van en `3. Recursos/`: ahí va material de referencia (como este mismo archivo), no las capacidades. Los skills son infraestructura del agente, por eso viven en `skills/`, no dentro de PARA.
 
-Aparte queda el **motor de armado** (el coach, `actualizar`, `migrar`): vive global e invisible en `~/.claude/skills/`, se llama por nombre y no aparece en tu `skills/`. Y las **versiones-fuente** de los skills de uso (el catálogo) viven ocultas en `.secondbrain/skills-disponibles/`: el coach copia de ahí a `skills/` cuando adoptás uno.
+Aparte queda **el método** (el coach con sus piezas, `actualizar`, `migrar`): vive global e invisible en `~/.claude/skills/`, se llama por nombre y no aparece en tu `skills/`. Las **versiones-fuente** de los skills de uso (el catálogo) las lleva el coach adentro (`~/.claude/skills/second-brain-coach/skills-disponibles/`): copia de ahí a tu `skills/` cuando adoptás uno.
 
 ## Checklist antes de dar por hecho un skill
 - [ ] ¿Se dispara con frases reales tuyas?
