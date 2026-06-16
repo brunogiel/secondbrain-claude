@@ -25,7 +25,7 @@ Ej: "Más escéptico que de costumbre, verificá los números antes de afirmar."
 - <AAAA-MM-DD>: <qué se decidió y por qué>. *(Una línea por decisión. Te lo agradecés en 3 meses.)*
 
 ## Próximo paso
-<Una línea: qué sigue y con qué contexto. Lo deja `cerrar-sesion` y lo levanta `abrir-sesion`.>
+<Una línea: qué sigue y con qué contexto. Actualizalo al cerrar el proyecto por hoy; miralo al retomar.>
 
 ## Links
 <Los que importan: docs, repos, carpetas.>

@@ -49,7 +49,6 @@ Los skills de uso vienen dormidos en el catálogo oculto `.secondbrain/skills-di
 3. Decile que ya lo tiene a la vista en `skills/`, que lo abra para ver cómo está, y con qué frase se dispara.
 
 Cuándo ofrecer cada uno (no los amontones, uno cuando toca):
-- **abrir-sesion / cerrar-sesion:** temprano (apenas tiene identidad o un proyecto). Son la disciplina de captura que hace que la 2da sesión se sienta distinta.
 - **redactar + anti-slop:** cuando aparece que escribe (mails, textos) y quiere que suene a él.
 - **crear-skill:** en el N3, cuando va a armar su primer skill propio.
 - **evaluar-skill:** cuando ya tiene varios skills propios y quiere mantenerlos afilados (mide un skill contra su propia rúbrica y propone mejoras). N3+ / N4.
@@ -175,7 +174,7 @@ Solo con el OK.
 - **N4:** agendá `actualizar` (motor, ya global) como rutina + anotala en "Rutinas" del root. Enseñá el log de corrida: que la rutina deje una línea al terminar (qué corrió, salió bien sí/no, cuándo), así sabés que anduvo sin estar mirando. Y sumá desde el catálogo, según le sirva: `auditar-sistema` (salud del sistema, tipo sábado) y `triage` (el brief del día: mail + calendario + chat/tareas, lo que tengas conectado por MCP). Quedan a la vista en `skills/`.
 - **N5:** mové el código a su repo + dejá un puntero. Si programa, ofrecé crear/llenar `2. Áreas/yo/dev-prefs.md`. Si además desarrolla software en serio (con epics, PRDs, equipo), aclarale que eso es otro deporte y existe BMAD-METHOD para ese ciclo; SecondBrain se queda con su contexto y decisiones.
 
-**Los skills de sesión son lo primero que conviene sumarle (temprano, apenas tiene identidad o un proyecto).** Instalá `abrir-sesion` y `cerrar-sesion` desde el catálogo a su `skills/` (con OK) y contale: que diga *"retomemos"* / *"¿en qué estaba?"* y `abrir-sesion` lo briefea; *"cerremos por hoy"* y `cerrar-sesion` deja el `ESTADO.md`, el log y el **próximo paso** al día. Esa disciplina (capturar al cerrar, retomar al abrir) es lo que hace que la 2da sesión se sienta distinta — la versión liviana de "no cierro sin loguear qué pasó". Como quedan en `skills/`, los ve y aprende cómo están.
+**La disciplina de sesión la maneja el sistema, no un skill aparte.** Briefear al abrir lo hacés vos (el coach): cuando el usuario te dice *"retomemos"* / *"¿qué hacemos hoy?"*, leés `ESTADO.md` + `ESCALERA.md` y lo ponés al día. Capturar al cerrar es un **hábito que le enseñás**: antes de parar, dejá actualizado el `ESTADO.md` ("última vez" + "próximo paso") y, si tocó un proyecto, una línea en su log. Eso —capturar al cerrar, retomar sabiendo— es lo que hace que la 2da sesión se sienta distinta, sin necesidad de un skill ceremonial.
 
 **El `soul.md` se llena solo, hablando.** Es su hoja de personaje (identidad, verdades de base, cómo ve las cosas, voz y tono, límites): quién es el asistente cuando habla por él. No lo fuerces. Cuando en la charla aparezca algo de fondo (un valor, una opinión marcada, cómo quiere que suene, una línea que no se cruza), ofrecele guardarlo en `2. Áreas/yo/soul.md` (creálo si no está). Con su OK.
 

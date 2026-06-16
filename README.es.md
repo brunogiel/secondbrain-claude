@@ -20,7 +20,7 @@ Casi nadie escribe esos archivos. Esto te da la semilla y un coach que te lleva 
 curl -fsSL https://raw.githubusercontent.com/brunogiel/secondbrain-claude/main/install.sh | bash
 ```
 
-Te crea las carpetas `0. Inbox/` + PARA, lo esencial (router `CLAUDE.md`, `ESTADO.md`, `AGENTS.md`, tu identidad en `2. Áreas/yo/`) y una carpeta oculta `.secondbrain/` para el proceso (doctrina + el catálogo de skills que vas a usar). Instala **solo el motor** — el coach más `actualizar`/`migrar` — global e invisible, así `/second-brain-coach` funciona en todos lados sin ensuciar tu carpeta. Los **skills que realmente usás** (redactar, anti-slop, triage, auditar, crear-skill, abrir/cerrar-sesion) NO te los tiran todos de una: el coach te va sumando cada uno a una carpeta `skills/` a secas y a la vista a medida que subís, así lo ves, lo abrís y aprendés cómo está hecho. Se disparan por la **tabla "Mis skills" de tu `CLAUDE.md`** (una frase → un skill) — por eso andan igual en **Claude Code, Cowork y Codex** (los tres leen tu `CLAUDE.md`; Codex vía `AGENTS.md`), sin carpetas específicas de Claude. Tu carpeta queda limpia: ves solo lo tuyo.
+Te crea las carpetas `0. Inbox/` + PARA, lo esencial (router `CLAUDE.md`, `ESTADO.md`, `AGENTS.md`, tu identidad en `2. Áreas/yo/`) y una carpeta oculta `.secondbrain/` para el proceso (doctrina + el catálogo de skills que vas a usar). Instala **solo el motor** — el coach más `actualizar`/`migrar` — global e invisible, así `/second-brain-coach` funciona en todos lados sin ensuciar tu carpeta. Los **skills que realmente usás** (redactar, anti-slop, triage, auditar, crear-skill, evaluar-skill) NO te los tiran todos de una: el coach te va sumando cada uno a una carpeta `skills/` a secas y a la vista a medida que subís, así lo ves, lo abrís y aprendés cómo está hecho. Se disparan por la **tabla "Mis skills" de tu `CLAUDE.md`** (una frase → un skill) — por eso andan igual en **Claude Code, Cowork y Codex** (los tres leen tu `CLAUDE.md`; Codex vía `AGENTS.md`), sin carpetas específicas de Claude. Tu carpeta queda limpia: ves solo lo tuyo.
 
 ¿No estás en la terminal (ej. Cowork desktop)? Bajá el zip o hacé `git clone` y abrí la carpeta en Claude: el coach viene adentro, en el `.claude/skills/` de la carpeta, así que está disponible al toque. Decile *"armame el sistema"*.
 
@@ -65,7 +65,6 @@ Siendo honestos con la línea: tu **cerebro** (tu texto) *y* tus **skills de uso
   - **`actualizar`**: chequea si el kit tiene versión nueva y, con tu OK, la instala.
   - **`migrar-de-claude-projects`**: trae tus Projects cerrados de Claude al sistema.
 - **Los skills que usás** (👁 visibles en `skills/`, el coach te los va sumando a medida que subís — dormidos hasta que una frase los despierta):
-  - **`abrir-sesion` / `cerrar-sesion`**: abrís la sesión ya briefeado; la cerrás capturando qué pasó + el próximo paso (por eso la 2da sesión se siente distinta).
   - **`redactar`**: escribe en tu voz (la aprende de textos tuyos).
   - **`anti-slop`**: le saca el olor a IA a cualquier texto.
   - **`crear-skill`**: te ayuda a armar un skill nuevo bien hecho.

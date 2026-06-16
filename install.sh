@@ -10,7 +10,7 @@
 #   1. VISIBLE en tu SB: tu contexto (PARA, identidad, CLAUDE.md, ESTADO, Inbox) y
 #      los SKILLS QUE USÁS (en skills/, carpeta a secas). Estos NO se instalan todos de
 #      una: el coach te los va sumando a medida que avanzás (redactar, anti-slop, triage,
-#      auditar, crear-skill, abrir/cerrar-sesion). Los ves, los abrís, aprendés cómo están.
+#      auditar, crear-skill, evaluar-skill). Los ves, los abrís, aprendés cómo están.
 #      Se disparan desde la tabla "Mis skills" de tu CLAUDE.md (por eso andan en Claude
 #      Code, Cowork y Codex por igual: los tres leen el CLAUDE.md, sin carpetas ocultas).
 #   2. OCULTO en tu SB (.secondbrain/): el proceso — la doctrina (reference.md), la
@@ -36,7 +36,7 @@ SKILLS_MOTOR=("second-brain-coach" "actualizar" "migrar-de-claude-projects")
 # Skills de USO: el usuario los ve y los usa. NO se instalan acá; se dejan en el
 # catálogo oculto (.secondbrain/skills-disponibles/) y el coach los copia a skills/
 # (visible) a medida que el usuario avanza.
-SKILLS_USO=("abrir-sesion" "cerrar-sesion" "redactar" "anti-slop" "crear-skill" "evaluar-skill" "auditar-sistema" "triage")
+SKILLS_USO=("redactar" "anti-slop" "crear-skill" "evaluar-skill" "auditar-sistema" "triage")
 SKILLS_DIR="${HOME}/.claude/skills"
 SB_DIR=".secondbrain"
 CAT_DIR="${SB_DIR}/skills-disponibles"

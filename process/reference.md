@@ -55,7 +55,7 @@ Adentro de cada proyecto va un `CLAUDE.md` (hay una plantilla en `.secondbrain/p
 - **Log de decisiones:** una línea con fecha cada vez que decidís algo importante. ("2026-06-01: elegimos X en vez de Y porque Z").
 - **Próximo paso:** una línea de qué sigue y con qué contexto — el "handoff" a tu yo futuro.
 
-El log es oro: la próxima vez que abrís el proyecto (vos o el asistente), no tenés que reconstruir por qué hiciste las cosas. Está escrito. Y no hace falta que lo lleves a mano: los skills `cerrar-sesion` (deja el log y el próximo paso al día al terminar) y `abrir-sesion` (te briefea al retomar) automatizan ese ciclo. El modelo es stateless; este archivo no.
+El log es oro: la próxima vez que abrís el proyecto (vos o el asistente), no tenés que reconstruir por qué hiciste las cosas. Está escrito. El hábito que lo sostiene: **antes de cerrar, dejá el log y el "próximo paso" al día; al retomar, leelos.** El modelo es stateless; este archivo no.
 
 ---
 
@@ -234,7 +234,7 @@ El truco del status: `ESTADO.md` es un archivo chico (nivel + proyectos activos 
 
 La regla, en **3 baldes** (así tu carpeta se ve limpia y sabés qué es qué):
 
-1. **👁 VISIBLE en tu SB — lo tuyo.** Tu contexto: las carpetas PARA + `0. Inbox/`, tu identidad (`2. Áreas/yo/`), tu progreso (`ESTADO.md`), el `CLAUDE.md` raíz (router) + `AGENTS.md`. Y **`skills/`: los skills que usás** (redactar, anti-slop, triage, auditar, crear-skill, abrir/cerrar-sesion + los que armes vos). Los ves, los abrís, aprendés cómo están. No vienen todos de una: el coach te los va sumando a medida que avanzás.
+1. **👁 VISIBLE en tu SB — lo tuyo.** Tu contexto: las carpetas PARA + `0. Inbox/`, tu identidad (`2. Áreas/yo/`), tu progreso (`ESTADO.md`), el `CLAUDE.md` raíz (router) + `AGENTS.md`. Y **`skills/`: los skills que usás** (redactar, anti-slop, triage, auditar, crear-skill, evaluar-skill + los que armes vos). Los ves, los abrís, aprendés cómo están. No vienen todos de una: el coach te los va sumando a medida que avanzás.
 
 2. **🔒 OCULTO en tu SB — el proceso (`.secondbrain/`).** Esta doctrina (`reference.md`), la `plantilla-proyecto.md`, el **catálogo** `skills-disponibles/` (las versiones-fuente de los skills de uso, de donde el coach copia a `skills/` cuando adoptás uno) y el control de versión. Empieza con punto: no se ve en Finder, pero sincroniza igual.
 

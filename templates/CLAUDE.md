@@ -21,7 +21,7 @@
 5. La doctrina (cómo crece el sistema, skills, convenciones) vive en `.secondbrain/reference.md`. Leela solo cuando la necesites.
 6. Tus skills de uso viven en `skills/` (carpeta a la vista) y se disparan por la tabla "Mis skills" de abajo: cuando una frase mía matchea una fila, seguí ese skill. (El motor del kit —coach, etc.— se invoca por nombre, ej. `/second-brain-coach`.)
 7. Si te tiro algo turbio para después ("metelo al inbox", "no lo quiero decidir ahora"), va a `0. Inbox/` (mirá su `INBOX.md`).
-8. Si digo "retomemos" / "¿en qué estaba?", corré `abrir-sesion`. Si digo "cerremos por hoy", corré `cerrar-sesion` (deja el `ESTADO.md`, el log y el próximo paso al día, para que la próxima sesión arranque sabiendo).
+8. Si retomo ("¿en qué estaba?"), briefeame leyendo `ESTADO.md` (y el log del proyecto activo). Antes de cerrar, dejá `ESTADO.md` al día —"última vez" + "próximo paso"— para que la próxima sesión arranque sabiendo.
 
 ## Quién soy
 - **Nombre:** <...>

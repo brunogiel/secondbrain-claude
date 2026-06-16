@@ -22,7 +22,7 @@ Most people never write those files. This gives you the seed and a coach that wa
 curl -fsSL https://raw.githubusercontent.com/brunogiel/secondbrain-claude/main/install.sh | bash
 ```
 
-This creates your `0. Inbox/` + PARA folders, the essentials (`CLAUDE.md` router, `ESTADO.md`, `AGENTS.md`, your identity under `2. Áreas/yo/`), and a hidden `.secondbrain/` for the process (doctrine + the catalog of skills you'll use). It installs **only the engine** — the coach plus `actualizar`/`migrar` — globally and invisibly, so `/second-brain-coach` works everywhere without cluttering your folder. The **skills you actually use** (redactar, anti-slop, triage, auditar, crear-skill, abrir/cerrar-sesion) are NOT dumped on you: the coach adds each one to a plain, visible `skills/` folder as you climb, so you see it, open it, and learn how it's built. They fire through the **"Mis skills" table in your `CLAUDE.md`** (a phrase → a skill) — which is why they work the same in **Claude Code, Cowork, and Codex** (all three read your `CLAUDE.md`; Codex via `AGENTS.md`), no Claude-only folder needed. Your folder stays clean: you only see your own stuff.
+This creates your `0. Inbox/` + PARA folders, the essentials (`CLAUDE.md` router, `ESTADO.md`, `AGENTS.md`, your identity under `2. Áreas/yo/`), and a hidden `.secondbrain/` for the process (doctrine + the catalog of skills you'll use). It installs **only the engine** — the coach plus `actualizar`/`migrar` — globally and invisibly, so `/second-brain-coach` works everywhere without cluttering your folder. The **skills you actually use** (redactar, anti-slop, triage, auditar, crear-skill, evaluar-skill) are NOT dumped on you: the coach adds each one to a plain, visible `skills/` folder as you climb, so you see it, open it, and learn how it's built. They fire through the **"Mis skills" table in your `CLAUDE.md`** (a phrase → a skill) — which is why they work the same in **Claude Code, Cowork, and Codex** (all three read your `CLAUDE.md`; Codex via `AGENTS.md`), no Claude-only folder needed. Your folder stays clean: you only see your own stuff.
 
 Not on the terminal (e.g. Cowork desktop)? Download the zip or `git clone` and open the folder in Claude — the coach ships inside the folder's `.claude/skills/`, so it's available immediately. Just say *"set up my system"*.
 
@@ -67,7 +67,6 @@ To be honest about the line: your **brain** (your text) *and* your **use-skills*
   - **`actualizar`** — checks if the kit has a new version and, with your OK, installs it.
   - **`migrar-de-claude-projects`** — brings your closed Claude Projects into the system.
 - **The skills you use** (👁 visible in `skills/`, added by the coach as you climb — dormant until a phrase triggers them):
-  - **`abrir-sesion` / `cerrar-sesion`** — open a session already briefed; close it capturing what happened + the next step (so the 2nd session feels different).
   - **`redactar`** — writes in your voice (learns it from your own sample texts).
   - **`anti-slop`** — strips the "AI smell" out of any text.
   - **`crear-skill`** — helps you build a new skill the right way.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.7.1
+- **Sacados `abrir-sesion` y `cerrar-sesion`** del catálogo: el autor nunca los usó y su valor ya está cubierto por el coach + `ESTADO.md` + `ESCALERA.md`. El catálogo de skills de uso queda en **6** (redactar, anti-slop, triage, crear-skill, evaluar-skill, auditar-sistema). El "briefear al abrir" lo hace el coach; el "capturar al cerrar" pasa a ser un **hábito** (dejar `ESTADO.md` + "próximo paso" al día), no un skill ceremonial. Limpieza de referencias en coach, doctrina, templates y READMEs.
+- **Mapa definitivo:** motor del método (3, oculto/global, el usuario solo toca `/coach`) = `second-brain-coach` + `actualizar` + `migrar`. Skills de uso (6, visibles en el SB) = lo que el usuario usa en su trabajo.
+
 ## 2.7.0
 - **Tracker de progreso gamificado `ESCALERA.md`** (visible, en la raíz): niveles 0→5 con checklist por nivel, "Nivel actual" + barra de progreso + "Próximo paso", y el "qué ganás" de cada nivel. El **coach lo mantiene**: tacha lo cumplido, mueve el nivel, escribe el próximo paso. Disparos nuevos del coach: *"¿cómo vengo?"* / *"mi progreso"* → muestra el tracker; *"¿qué hacemos hoy?"* / *"hola coach"* → lo lee y propone la próxima tarea. Al onboardear a alguien que **ya tiene sistema**, el coach evalúa el nivel mirando su carpeta y deja el tracker cargado (no lo hace empezar de cero). Separado del `ESTADO.md` (que sigue siendo el tablero fino que el asistente lee siempre).
 
