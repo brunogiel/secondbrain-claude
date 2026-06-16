@@ -42,15 +42,13 @@ Un `SKILL.md` en una carpeta, con:
 Empezás con skills. Lo demás viene después, cuando una tarea ya no te necesita ahí.
 
 ## Dónde viven
-Clave: tu asistente **descubre y dispara** los skills mirando la carpeta `.claude/skills/`. Si un skill no está ahí, su frase no lo despierta sola. Por eso:
-- **Generales** (sirven a varios proyectos): en `.claude/skills/` en la raíz de tu SB.
-- **De un proyecto puntual**: adentro de ese proyecto, en `1. Proyectos/<proyecto>/.claude/skills/`.
+Los skills que usás viven en **`skills/`** de tu SB, a la vista (los ves, los abrís, aprendés cómo están). Esa carpeta está respaldada por `.claude/skills/`, que es donde tu asistente **descubre y dispara** los skills por su frontmatter — es la misma carpeta: vos ves y editás `skills/`, el `.claude/` es la plomería. Si un skill no está ahí, su frase no lo despierta sola.
 
-Para verlos y editarlos sin pelear con la carpeta oculta, hay un atajo `skills/` que apunta a `.claude/skills/`, y los anotás en la tabla "Mis skills" de tu `CLAUDE.md` (ese mapa es para vos, el humano; el disparo lo hace el frontmatter).
+Ahí caen dos cosas: los **skills de uso del kit** que vas adoptando (redactar, anti-slop, triage, auditar, crear-skill, abrir/cerrar-sesion) y los **que armás vos**. Los anotás en la tabla "Mis skills" de tu `CLAUDE.md` (ese mapa es para el humano; el disparo lo hace el frontmatter).
 
-No van en `3. Recursos/`: ahí va material de referencia (como este mismo archivo), no las capacidades. Los skills son infraestructura del agente, por eso viven en `.claude/skills/`, no dentro de PARA.
+No van en `3. Recursos/`: ahí va material de referencia (como este mismo archivo), no las capacidades. Los skills son infraestructura del agente, por eso viven en `skills/`, no dentro de PARA.
 
-Los del kit (el motor del coach) son aparte: viven globales en `~/.claude/skills/`, así funcionan en cualquier carpeta.
+Aparte queda el **motor de armado** (el coach, `actualizar`, `migrar`): vive global e invisible en `~/.claude/skills/`, se llama por nombre y no aparece en tu `skills/`. Y las **versiones-fuente** de los skills de uso (el catálogo) viven ocultas en `.secondbrain/skills-disponibles/`: el coach copia de ahí a `skills/` cuando adoptás uno.
 
 ## Checklist antes de dar por hecho un skill
 - [ ] ¿Se dispara con frases reales tuyas?

@@ -26,15 +26,31 @@ Cuidado con esta diferencia, es clave:
 
 O sea: cuando coacheás, hablás con tu voz. Cuando el usuario te pide una tarea suya (redactar, ordenar, lo que sea), seguís su `como-trabajo`. No le pintes tu tono a sus entregables, ni dejes que su tono te apague cuando lo estás guiando.
 
-## Dónde vive cada cosa (para que sepas qué leer y qué escribir)
-- **A la vista del usuario (sus entregables):** el `CLAUDE.md` raíz (router fino) y el `ESTADO.md` en la raíz, más las carpetas `1. Proyectos/` a `4. Archivo/`. La identidad vive en PARA, en `2. Áreas/yo/` (`sobre-mi`, `como-trabajo`, `mi-estilo`, `MEMORIA`; `soul` y `dev-prefs` se suman ahí cuando hacen falta).
-- **Oculto (el proceso, en `.secondbrain/`):** `reference.md` (la doctrina), `VERSION`, `CHANGELOG.md`. El usuario no lo ve en Finder, pero vos lo leés cuando lo necesitás. No lo expongas salvo que pregunte.
-- **El motor (vos + el resto de los skills del kit):** viven globales en `~/.claude/skills/`. Es el motor del método: se reinstala con el kit en cada máquina, no necesita viajar. Vos sos la puerta de entrada.
-- **Los skills que el usuario arma:** van en `.claude/skills/` de su carpeta. **Ahí es donde su asistente los descubre y los dispara** con una frase (si están en otro lado, no se disparan solos). Para verlos y editarlos hay un atajo `skills/` que apunta a esa carpeta, y los anotás en la tabla "Mis skills" del `CLAUDE.md` raíz (ese mapa es para el humano). Son suyos y viajan con el sync.
+## Dónde vive cada cosa (la regla, en 3 baldes)
+- **👁 VISIBLE en el SB (lo del usuario):** su contexto — `CLAUDE.md` raíz (router) + `ESTADO.md` + `AGENTS.md`, las carpetas `0. Inbox/` a `4. Archivo/`, la identidad en `2. Áreas/yo/` (`sobre-mi`, `como-trabajo`, `mi-estilo`, `MEMORIA`; `soul`/`dev-prefs` se suman cuando hacen falta) — y **`skills/`: los skills que USA**. Esos los ve, los abre, aprende cómo están. **No vienen todos de una:** se los vas sumando a `skills/` a medida que avanza (ver "Sumar un skill de uso"). Acá también caen los que arma él.
+- **🔒 OCULTO en el SB (el proceso, `.secondbrain/`):** `reference.md` (doctrina), `plantilla-proyecto.md`, el **catálogo** `skills-disponibles/` (las versiones-fuente de los skills de uso, de donde copiás a `skills/`), y `VERSION`/`CHANGELOG`. No lo expongas salvo que pregunte.
+- **🔒 GLOBAL e invisible (`~/.claude/skills/`): SOLO el motor de armado** — vos (el coach), `actualizar` y `migrar`. Se llaman por nombre (`/second-brain-coach`); no viven en la carpeta del usuario ni aparecen en su `skills/`. Vos no sos un skill de uso: sos motor.
+
+Nota técnica: `skills/` (lo que el usuario ve) está respaldada por `.claude/skills/` (lo que el asistente escanea para disparar). Es la misma cosa: escribís en `skills/<nombre>/SKILL.md` y se dispara solo. El usuario ve y edita `skills/`; el `.claude/` es la plomería.
+
+## Sumar un skill de uso (a medida que el usuario avanza)
+Los skills de uso vienen dormidos en el catálogo oculto `.secondbrain/skills-disponibles/`. Cuando el usuario llega al punto donde uno le sirve, **ofrecelo** (propone, vos decidís) y, con su OK:
+1. Copiá la carpeta del skill del catálogo a la vista: `.secondbrain/skills-disponibles/<nombre>/` → `skills/<nombre>/` (que es `.claude/skills/<nombre>/`; ahí se dispara).
+2. Anotalo en la tabla "Mis skills" del `CLAUDE.md` raíz, con su frase gatillo.
+3. Decile que ya lo tiene a la vista en `skills/`, que lo abra para ver cómo está, y con qué frase se dispara.
+
+Cuándo ofrecer cada uno (no los amontones, uno cuando toca):
+- **abrir-sesion / cerrar-sesion:** temprano (apenas tiene identidad o un proyecto). Son la disciplina de captura que hace que la 2da sesión se sienta distinta.
+- **redactar + anti-slop:** cuando aparece que escribe (mails, textos) y quiere que suene a él.
+- **crear-skill:** en el N3, cuando va a armar su primer skill propio.
+- **auditar-sistema:** en el N4, como rutina de salud (tipo sábado).
+- **triage:** en el N4, el brief del día (necesita Gmail/calendario por MCP).
+
+El catálogo es la fuente; lo que usa vive en `skills/`. Si edita su copia, es suya; el catálogo queda como original.
 
 ## Cowork o Code (adaptate al cliente)
 El sistema vive entero en la carpeta sincronizada, así que es el mismo cerebro abras donde abras.
-- **Cowork (sin terminal, el default):** no corras comandos de shell; la parte mecánica hacela con tus herramientas. El motor (vos y los demás skills del kit) viaja con la carpeta, en su `.claude/skills/`; así, al abrir la carpeta en Cowork, ya estás disponible sin instalar nada.
+- **Cowork (sin terminal, el default):** no corras comandos de shell; la parte mecánica hacela con tus herramientas. El motor (vos + `actualizar`/`migrar`) viaja dentro de la carpeta, en su `.claude/skills/`; así, al abrir la carpeta, ya estás disponible sin instalar nada. (Es el único caso donde el motor vive adentro de la carpeta; en Claude Code queda afuera, global e invisible. Igual no lo listes en `skills/`: ahí van solo los skills de uso.)
 - **Claude Code (terminal, más avanzado):** corré el `install.sh`, que además deja el motor global en `~/.claude/skills/` (funciona en cualquier carpeta) y arma scripts de verdad. Acá cobra sentido el Nivel 5 (split código/contexto).
 - **Migrar de Cowork a Code = abrir la misma carpeta en Code.** No hay migración: el cerebro ya está en la carpeta.
 - **Y más allá de Claude:** el *cerebro* (las carpetas de texto, la identidad, los proyectos) es portable y sirve con Codex, Cursor o lo que venga. El *motor* (los skills `.claude/skills/`, los `/comandos`) está pensado para Claude Code / Cowork: en otro harness viaja el texto, no los disparadores. Por eso dejamos un `AGENTS.md` que apunta al `CLAUDE.md` (Codex busca ese nombre). El harness es las manos; el cerebro es del usuario.
@@ -108,11 +124,11 @@ Ofrecé/confirmá el **modo**. Guardá modo + cliente + la checklist en `ESTADO.
 
 **Bootstrap (casos a/b/c, con OK):**
 - Carpetas visibles: `0. Inbox/` (con su `INBOX.md`, el protocolo de captura) + PARA: `1. Proyectos/`, `2. Áreas/`, `3. Recursos/`, `4. Archivo/`. En `3. Recursos/` cae `arquitectura-skills.md` (la doctrina de skills, como Recurso visible).
-- Carpeta oculta `.secondbrain/` con `reference.md`, `VERSION`, `CHANGELOG.md` (bajalos del repo si no están). Y `.claude/skills/` (donde van los skills propios) con un atajo visible `skills/` que apunta ahí.
+- Carpeta oculta `.secondbrain/` con `reference.md`, `plantilla-proyecto.md`, el catálogo `skills-disponibles/` (skills de uso dormidos) y `VERSION`/`CHANGELOG.md` (bajalos del repo si no están). Y la carpeta visible `skills/` (respaldada por `.claude/skills/`), vacía al principio: ahí vas sumando los skills de uso.
 - `CLAUDE.md` raíz fino (router) + `ESTADO.md` + `AGENTS.md` (puntero para otros harnesses), los tres en la raíz. Los básicos de identidad en PARA, en `2. Áreas/yo/`: `sobre-mi`, `como-trabajo`, `mi-estilo`, `MEMORIA`. `soul` y `dev-prefs` NO van de entrada: los creás ahí cuando hagan falta.
 
 ### Paso 1: Mirá el estado [DET]
-Leé `ESTADO.md` primero (es chico). Después tachá la checklist con chequeos livianos (existencia / `<...>` / conteo), sin abrir todo el contenido. Mirá también si hay skills propios del usuario en `.claude/skills/` de la carpeta (el motor del kit no cuenta acá, aunque también esté ahí en Cowork: lo que importa es si armó alguno SUYO más allá de los que vienen) y si hay rutinas en la sección "Rutinas" del root.
+Leé `ESTADO.md` primero (es chico). Después tachá la checklist con chequeos livianos (existencia / `<...>` / conteo), sin abrir todo el contenido. Mirá también qué hay en su `skills/` (los skills de uso que ya adoptó del catálogo + los que armó él) y si hay rutinas en la sección "Rutinas" del root. El motor (vos/`actualizar`/`migrar`) no cuenta acá: vive aparte.
 
 ### Paso 2: Ubicalo [LAT]
 Traducí la checklist a un nivel para hablarle simple:
@@ -137,11 +153,11 @@ Solo con el OK.
 - **N0:** preguntas y llená `2. Áreas/yo/sobre-mi` y `como-trabajo`.
 - **N1:** `1. Proyectos/<nombre>/CLAUDE.md` con contexto + log, usando la plantilla `.secondbrain/plantilla-proyecto.md` (Qué es / Cómo trabajar acá / Estado / Decisiones / Próximo paso / Links). Ofrecé la línea **"Cómo trabajar acá"** (la persona del asistente para ese proyecto: "sé escéptico", "sé breve", "paso a paso"); si no la quiere, se borra.
 - **N2:** filas a la tabla de atajos.
-- **N3 (primer skill):** primero abrí con él el `actualizar` que ya viene (en Claude Code está en `~/.claude/skills/actualizar/`; en Cowork, en el `.claude/skills/` de la carpeta) y mostrale la anatomía en vivo: el frontmatter con las frases que lo disparan, los pasos `[DET]`/`[LAT]`, el scriptito. Eso le enseña qué es un skill y qué es un script. Después armá EL SUYO (algo que repita 3 veces, regla de 3) en `.claude/skills/<nombre>/SKILL.md` de su carpeta, y anotalo en la tabla "Mis skills" del `CLAUDE.md` raíz. El skill `crear-skill` te guía con la anatomía; tu Recurso `3. Recursos/arquitectura-skills.md` es la referencia.
-- **N4:** agendá `actualizar` (que ya viene) como rutina + anotala en "Rutinas" del root. Enseñá el log de corrida: que la rutina deje una línea al terminar (qué corrió, salió bien sí/no, cuándo) en un archivito, así sabés que anduvo sin estar mirando. Otras rutinas que ya vienen: `auditar-sistema` (salud del sistema, tipo sábado) y `triage` (el brief del día: mail + calendario + chat/tareas, lo que tengas conectado por MCP).
+- **N3 (primer skill):** instalá `crear-skill` desde el catálogo a su `skills/` (con OK) — queda a la vista para que vea cómo está hecho un skill por dentro (frontmatter con las frases que disparan, pasos `[DET]`/`[LAT]`). Eso le enseña qué es un skill y qué es un script. Después, guiado por `crear-skill`, armá EL SUYO (algo que repita 3 veces, regla de 3) en `skills/<nombre>/SKILL.md`, y anotalo en la tabla "Mis skills" del `CLAUDE.md` raíz. Tu Recurso `3. Recursos/arquitectura-skills.md` es la referencia.
+- **N4:** agendá `actualizar` (motor, ya global) como rutina + anotala en "Rutinas" del root. Enseñá el log de corrida: que la rutina deje una línea al terminar (qué corrió, salió bien sí/no, cuándo), así sabés que anduvo sin estar mirando. Y sumá desde el catálogo, según le sirva: `auditar-sistema` (salud del sistema, tipo sábado) y `triage` (el brief del día: mail + calendario + chat/tareas, lo que tengas conectado por MCP). Quedan a la vista en `skills/`.
 - **N5:** mové el código a su repo + dejá un puntero. Si programa, ofrecé crear/llenar `2. Áreas/yo/dev-prefs.md`. Si además desarrolla software en serio (con epics, PRDs, equipo), aclarale que eso es otro deporte y existe BMAD-METHOD para ese ciclo; SecondBrain se queda con su contexto y decisiones.
 
-**Los skills de sesión vienen con el kit y valen desde el día uno (no esperan a un nivel).** Apenas tenga identidad o un proyecto, contale que puede decir *"retomemos"* / *"¿en qué estaba?"* para que `abrir-sesion` lo briefee, y *"cerremos por hoy"* para que `cerrar-sesion` deje el `ESTADO.md`, el log y el **próximo paso** al día. Esa disciplina de captura (capturar al cerrar, retomar al abrir) es exactamente lo que hace que la 2da sesión se sienta distinta. Es la versión liviana de "no cierro sin loguear qué pasó".
+**Los skills de sesión son lo primero que conviene sumarle (temprano, apenas tiene identidad o un proyecto).** Instalá `abrir-sesion` y `cerrar-sesion` desde el catálogo a su `skills/` (con OK) y contale: que diga *"retomemos"* / *"¿en qué estaba?"* y `abrir-sesion` lo briefea; *"cerremos por hoy"* y `cerrar-sesion` deja el `ESTADO.md`, el log y el **próximo paso** al día. Esa disciplina (capturar al cerrar, retomar al abrir) es lo que hace que la 2da sesión se sienta distinta — la versión liviana de "no cierro sin loguear qué pasó". Como quedan en `skills/`, los ve y aprende cómo están.
 
 **El `soul.md` se llena solo, hablando.** Es su hoja de personaje (identidad, verdades de base, cómo ve las cosas, voz y tono, límites): quién es el asistente cuando habla por él. No lo fuerces. Cuando en la charla aparezca algo de fondo (un valor, una opinión marcada, cómo quiere que suene, una línea que no se cruza), ofrecele guardarlo en `2. Áreas/yo/soul.md` (creálo si no está). Con su OK.
 

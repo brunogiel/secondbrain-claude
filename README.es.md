@@ -20,7 +20,7 @@ Casi nadie escribe esos archivos. Esto te da la semilla y un coach que te lleva 
 curl -fsSL https://raw.githubusercontent.com/brunogiel/secondbrain-claude/main/install.sh | bash
 ```
 
-Te crea las carpetas `0. Inbox/` + PARA, lo esencial (tu router `CLAUDE.md`, el `ESTADO.md` y un puntero `AGENTS.md` en la raíz, tus básicos de identidad en `2. Áreas/yo/`), una carpeta oculta `.secondbrain/` para la maquinaria, e instala los skills del kit globales (el motor, para que el coach funcione en todos lados). Los skills que armás después viven en `.claude/skills/` (que es donde tu asistente los descubre y los dispara), con un atajo visible `skills/` para que los veas y los edites. El resto crece a medida que subís. Tu carpeta queda limpia: ves solo lo tuyo.
+Te crea las carpetas `0. Inbox/` + PARA, lo esencial (router `CLAUDE.md`, `ESTADO.md`, `AGENTS.md`, tu identidad en `2. Áreas/yo/`) y una carpeta oculta `.secondbrain/` para el proceso (doctrina + el catálogo de skills que vas a usar). Instala **solo el motor** — el coach más `actualizar`/`migrar` — global e invisible, así `/second-brain-coach` funciona en todos lados sin ensuciar tu carpeta. Los **skills que realmente usás** (redactar, anti-slop, triage, auditar, crear-skill, abrir/cerrar-sesion) NO te los tiran todos de una: el coach te va sumando cada uno a una carpeta visible `skills/` a medida que subís, así lo ves, lo abrís y aprendés cómo está hecho. Tu carpeta queda limpia: ves solo lo tuyo.
 
 ¿No estás en la terminal (ej. Cowork desktop)? Bajá el zip o hacé `git clone` y abrí la carpeta en Claude: el coach viene adentro, en el `.claude/skills/` de la carpeta, así que está disponible al toque. Decile *"armame el sistema"*.
 
@@ -58,16 +58,18 @@ Siendo honestos con la línea: el **cerebro** (tu texto) es del todo portable; e
 - **`sobre-mi.md` / `como-trabajo.md` / `mi-estilo.md`**: quién sos, cómo te gusta trabajar y una muestra de tu voz para escribir (templates para llenar, en `2. Áreas/yo/`).
 - **`soul.md` / `dev-prefs.md`**: lo de fondo (se llena con el tiempo, hablando) y, si programás, cómo te gusta laburar el código. Los suma el coach a medida que subís; no vienen en la instalación.
 - **`3. Recursos/arquitectura-skills.md`**: tu referencia para armar buenos skills (regla de 3, DET/LAT, anatomía, errores típicos).
-- **`.secondbrain/`** (oculto): el proceso, o sea `reference.md` (el manual) y el control de versión. Fuera de vista, sincroniza igual.
-- **Skills** (dormidos hasta que una frase los despierta):
-  - **`second-brain-coach`**: te sube de nivel y te enseña mientras subís.
-  - **`actualizar`**: chequea si el kit tiene versión nueva y, con tu OK, la instala (viene funcionando).
+- **`.secondbrain/`** (oculto): el proceso — `reference.md` (el manual), la plantilla de proyecto, el **catálogo** de skills de uso y el control de versión. Fuera de vista, sincroniza igual.
+- **El motor** (🔒 global, invisible, se llama por nombre — nunca ensucia tu carpeta):
+  - **`second-brain-coach`**: te sube de nivel y te enseña mientras subís (`/second-brain-coach`).
+  - **`actualizar`**: chequea si el kit tiene versión nueva y, con tu OK, la instala.
+  - **`migrar-de-claude-projects`**: trae tus Projects cerrados de Claude al sistema.
+- **Los skills que usás** (👁 visibles en `skills/`, el coach te los va sumando a medida que subís — dormidos hasta que una frase los despierta):
+  - **`abrir-sesion` / `cerrar-sesion`**: abrís la sesión ya briefeado; la cerrás capturando qué pasó + el próximo paso (por eso la 2da sesión se siente distinta).
   - **`redactar`**: escribe en tu voz (la aprende de textos tuyos).
   - **`anti-slop`**: le saca el olor a IA a cualquier texto.
   - **`crear-skill`**: te ayuda a armar un skill nuevo bien hecho.
   - **`auditar-sistema`**: una revisión de salud de tu sistema (va bien como rutina).
   - **`triage`**: tu brief de la mañana y los accionables, cruzando tus fuentes: mail, calendario (reporte de citas) y tu chat/tareas de trabajo (Slack, Jira, Linear, Trello, Notion comments, lo que uses). Cada fuente necesita su MCP; con el mail solo ya arranca.
-  - **`migrar-de-claude-projects`**: trae tus Projects cerrados de Claude al sistema.
 
 ## Filosofía
 

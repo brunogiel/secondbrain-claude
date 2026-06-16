@@ -232,15 +232,17 @@ El truco del status: `ESTADO.md` es un archivo chico (nivel + proyectos activos 
 
 ## 14. Topología: proceso oculto, entregables a la vista
 
-Para que tu carpeta se vea limpia, el sistema separa lo tuyo de su maquinaria:
-- **A la vista (lo tuyo):** tus carpetas PARA + `0. Inbox/`, tu identidad (`sobre-mi`, `como-trabajo`), tu progreso (`ESTADO.md`), y el `CLAUDE.md` raíz (router fino).
-- **Oculto (el proceso):** la carpeta `.secondbrain/` con esta doctrina (`reference.md`) y el control de versión. Empieza con punto, así no se ve en Finder. Igual sincroniza por Drive/iCloud.
-- **El motor (el coach y los skills del kit):** en Claude Code, globales en `~/.claude/skills/` (funcionan en cualquier carpeta); en Cowork viajan con la carpeta, en su `.claude/skills/`.
-- **Tus skills:** en `.claude/skills/` de tu carpeta. **Esto importa: es el único lugar donde tu asistente los descubre y los dispara solos con una frase.** Para verlos sin pelear con la carpeta oculta, hay un atajo `skills/` que apunta ahí, y los anotás en la tabla "Mis skills" de tu `CLAUDE.md` (ese mapa es para vos; el disparo lo hace el frontmatter).
+La regla, en **3 baldes** (así tu carpeta se ve limpia y sabés qué es qué):
 
-Vos solo ves lo que hacés. El proceso trabaja de fondo.
+1. **👁 VISIBLE en tu SB — lo tuyo.** Tu contexto: las carpetas PARA + `0. Inbox/`, tu identidad (`2. Áreas/yo/`), tu progreso (`ESTADO.md`), el `CLAUDE.md` raíz (router) + `AGENTS.md`. Y **`skills/`: los skills que usás** (redactar, anti-slop, triage, auditar, crear-skill, abrir/cerrar-sesion + los que armes vos). Los ves, los abrís, aprendés cómo están. No vienen todos de una: el coach te los va sumando a medida que avanzás.
 
-> **Disparo ≠ ruteo.** Que un skill se dispare solo cuando decís su frase depende de que esté en `.claude/skills/` (ahí lee el harness el frontmatter). La tabla "Mis skills" del `CLAUDE.md` es otra cosa: es el mapa humano, para que vos sepas qué tenés. Las dos conviven; no son lo mismo.
+2. **🔒 OCULTO en tu SB — el proceso (`.secondbrain/`).** Esta doctrina (`reference.md`), la `plantilla-proyecto.md`, el **catálogo** `skills-disponibles/` (las versiones-fuente de los skills de uso, de donde el coach copia a `skills/` cuando adoptás uno) y el control de versión. Empieza con punto: no se ve en Finder, pero sincroniza igual.
+
+3. **🔒 GLOBAL e invisible (`~/.claude/skills/`) — solo el motor de armado.** El coach, `actualizar` y `migrar`. Se llaman por nombre (`/second-brain-coach`); no viven en tu carpeta ni aparecen en `skills/`. (En Cowork, sin global, el motor viaja dentro de la carpeta — el único caso en que está adentro.)
+
+Vos solo ves lo que usás. El proceso y el motor trabajan de fondo.
+
+> **Por qué `skills/` y no a secas.** Tu asistente solo dispara un skill si su archivo está en `.claude/skills/` (ahí lee el frontmatter). `skills/` es la **misma carpeta a la vista** (respaldada por `.claude/skills/`): vos ves y editás `skills/`, el `.claude/` es la plomería que hace que se disparen. Y la tabla "Mis skills" de tu `CLAUDE.md` es el **mapa humano** (para que sepas qué tenés y con qué frase). Disparo (frontmatter) y mapa (tabla) conviven; no son lo mismo.
 
 ---
 
