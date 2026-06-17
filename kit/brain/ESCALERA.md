@@ -33,7 +33,7 @@
 
 ## ☐ Nivel 3 — Tu primer skill
 *Una frase dispara una receta entera.*
-- [ ] Abriste el `actualizar` de ejemplo para ver cómo es un skill por dentro
+- [ ] Abriste `crear-skill` para ver cómo es un skill por dentro
 - [ ] Armaste tu primer skill propio (en `skills/` + su fila en la tabla "Mis skills")
 
 ## ☐ Nivel 4 — El sistema trabaja para vos
@@ -69,7 +69,7 @@ Agentes 100% autónomos que actúan sin tu OK, auto-mejora de skills en loop cer
 
 > El mapa de lo que ofrece SecondBrain y vos ves/manejás, en un solo lugar, para que sepas **qué hay** y **qué te falta**.
 > Los **archivos base** vienen al instalar (ya los tenés). Los **skills de uso** vienen dormidos en el catálogo del kit y el coach te los va sumando cuando tocan — por eso acá ves cuáles ya activaste (`[x]`) y cuáles te esperan (`[ ]`).
-> El coach mantiene estas marcas. ¿Te falta algo que debería estar? Escribí **`actualizar`** (el kit baja lo último). ¿Querés activar un skill antes de tiempo? Decile al coach *"sumame `<nombre>`"*.
+> El coach mantiene estas marcas. ¿Querés activar un skill antes de tiempo? Decile al coach *"sumame `<nombre>`"*. En Claude Code, si querés chequear updates del método, escribí **`actualizar`**; en Cowork el plugin se actualiza solo.
 
 ### 🗂 Archivos base (vienen al instalar, no se pisan)
 - [x] `CLAUDE.md` — el router: lo primero que tu asistente lee al arrancar.

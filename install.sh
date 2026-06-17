@@ -44,7 +44,7 @@ YO_EXTRA=("soul.md" "dev-prefs.md")   # NO se scaffoldean; el coach los suma des
 RECURSOS=("arquitectura-skills.md" "anti-slop-writing.md")
 
 echo ""
-echo "🧠  SecondBrain — armando tu sistema..."
+echo "🧠  SecondBrain — instalando el método..."
 echo ""
 
 # --- 0. precheck de red ---
