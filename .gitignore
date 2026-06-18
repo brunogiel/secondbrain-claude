@@ -1,2 +1,7 @@
 .DS_Store
 *.log
+
+# Prefs locales privadas (symlinks al Second Brain, NO commitear)
+.brain
+CLAUDE.local.md
+_bmad/custom/*.user.toml
