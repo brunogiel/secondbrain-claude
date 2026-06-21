@@ -88,6 +88,10 @@ fetch "skills/second-brain-coach/migracion.md"          "coach/migracion.md"
 fetch "VERSION"      "coach/VERSION"
 fetch "CHANGELOG.md" "coach/CHANGELOG.md"
 
+# comandos slash (Code): se instalan en ~/.claude/commands/ para que aparezcan como /second-brain-setup y /escalera
+COMMANDS=("second-brain-setup" "escalera")
+for c in "${COMMANDS[@]}"; do fetch "commands/${c}.md" "commands/${c}.md"; done
+
 # NOTA: este script NO arma tu carpeta del brain. Eso lo hace el coach, charlando y
 # preguntándote (igual que en Cowork): así nada se crea sin tu OK. Acá solo instalamos
 # el método (motor + kit) global. El brain lo armás vos con /second-brain-coach.
@@ -117,7 +121,14 @@ rm -rf "${COACH_DIR}/kit.new"
 cp -R "${TMP}/kit" "${COACH_DIR}/kit.new"
 rm -rf "${COACH_DIR}/kit"
 mv "${COACH_DIR}/kit.new" "${COACH_DIR}/kit"
+# comandos slash (Code-only): ~/.claude/commands/
+COMMANDS_DIR="${HOME}/.claude/commands"
+mkdir -p "$COMMANDS_DIR"
+for c in "${COMMANDS[@]}"; do
+  cp "${TMP}/commands/${c}.md" "${COMMANDS_DIR}/${c}.md"
+done
 echo "  ✓ método instalado global (motor + kit de ${#SKILLS_USO[@]} skills) en ~/.claude/skills/"
+echo "  ✓ comandos /second-brain-setup y /escalera instalados en ~/.claude/commands/"
 
 cat <<EOF
 
@@ -127,8 +138,8 @@ cat <<EOF
 
 Próximo paso: abrí Claude Code (o Cowork) en la carpeta donde quieras tu sistema y escribí:
 
-   /second-brain-coach
-
-Te hace un par de preguntas, te propone y arma con vos, de a un escalón.
+   /second-brain-setup   ← configura la base (idempotente, seguro correrlo de nuevo)
+   /second-brain-coach   ← el coach completo: te ubica y propone el próximo escalón
+   /escalera             ← chequeá tu progreso en cualquier momento
 
 EOF

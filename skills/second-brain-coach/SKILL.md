@@ -150,6 +150,23 @@ Cortas, en criollo. Base, no las recites textual.
 
 ## Flujo
 
+### Pre-flight: check de arranque del entorno [DET] — corre primero, siempre
+Dos chequeos baratos **antes de dejar laburar**, en toda invocación (también si ya es un SB armado, caso d: el check va antes de saltar al Paso 1). En vivo el cuello de botella nunca fue el concepto, fue el setup: gente con la carpeta sin sincronizar (riesgo de perder todo) y gente arrancando sin carpeta apuntada ("en bolas"). No bloqueás a la fuerza: **avisás y guiás** (proponés, el usuario decide). Si ya verificaste y está OK —o el usuario dijo "dejalo así"—, no machaques cada vez: anotalo en `ESTADO.md` (`Sync:`) y seguí (Regla de oro 6: liviano).
+
+**Check 1 — ¿La carpeta sincroniza a la nube?** Mirá la ruta absoluta de la carpeta del brain (en Code: `pwd`; en Cowork: la ruta que ves al acceder los archivos).
+- ✅ OK si cae bajo un root de nube conocido: Google Drive (`…/Library/CloudStorage/GoogleDrive-*/…`, `~/Google Drive/…`, `G:\Mi unidad\…`), iCloud (`…/Library/Mobile Documents/com~apple~CloudDocs/…`), Dropbox (`…/Dropbox/…`), OneDrive (`…/OneDrive*/…`, `…/Library/CloudStorage/OneDrive-*/…`).
+- 🚩 Riesgo si cae en `~/Desktop`, `~/Documents` (sin nube), `~/Downloads`, la raíz de la home, `/tmp` o cualquier disco/partición local sin sync. Avisá con tu voz: *"Tu brain está en `<ruta>`, que no sincroniza a la nube — si se muere la compu o se borra el disco, perdés todo. Te conviene moverlo a Drive/iCloud antes de seguir. ¿Lo movemos ahora?"* Con OK, ayudás a moverlo (Code: movés la carpeta y reabrís ahí; Cowork: lo guiás a crear/elegir una carpeta dentro de Drive y reapuntar el New task). Si dice que no, respetás (proponés, decide) y dejás `Sync: local (avisado)` en `ESTADO.md` para no repetirlo cada vez.
+
+**Check 2 — ¿Hay carpeta apuntada y con acceso?** Confirmá que tenés una carpeta de trabajo con lectura/escritura **antes de tocar nada**. El error clásico en vivo: arrancar sin carpeta seteada y no poder guardar nada.
+- Sin carpeta / sin acceso, en **Cowork:** *"No veo una carpeta apuntada. Abrí un **New task** y dale **acceso a tu carpeta** del brain (la que está en Drive). Sin eso laburo a ciegas y no puedo guardarte nada."* — guialo a hacerlo y recién seguí.
+- En **Code:** estás parado en `<cwd>`. Si no parece un brain (sin `ESTADO.md`/`ESCALERA.md` ni un `CLAUDE.md` router) y no encontrás uno, preguntá dónde está su carpeta del brain (o, si arranca de cero, seguí al Paso 0 / caso c).
+
+**Aclaración de UI de Cowork (soltala cuando haya confusión, no de oficio).** Dos pares que se confunden seguido y trabaron el arranque en vivo:
+- **New task, no "Proyectos".** En Cowork ya no existe la sección "Proyectos": cada laburo es un **New task** al que le das acceso a tu carpeta. "Trabajar en un proyecto" = darle acceso a esa carpeta, no es la vieja sección Projects.
+- **Habilidades vs Conectores.** **Habilidades = skills** (recetas que instalás, como este coach). **Conectores = MCP** (enchufás herramientas externas —Gmail, Drive, calendario, Meta— para que el asistente *opere*, no solo lea tus archivos). Una es la receta; el otro es el enchufe. (Es el Nivel 4; la doctrina está en `reference.md`.)
+
+Con esto resuelto (o pospuesto a pedido del usuario), seguís al Paso 0.
+
 ### Paso 0: Primer contacto [DET/LAT]
 Saludá corto, con tu voz. Después, en este orden:
 
@@ -220,7 +237,7 @@ Solo con el OK.
 Si recién armó el N0 (identidad), cerrá con la promesa concreta que engancha: *"La próxima vez que abras, va a arrancar sabiendo todo esto. Lo vas a notar en la segunda sesión."* Eso le da un momento de prueba, no una promesa abstracta.
 
 ### Paso 8: Dejá el ESTADO actualizado [DET]
-Si diagnosticaste o construiste algo, actualizá **los dos**: `ESTADO.md` (el tablero fino: modo + cliente + proyectos activos + qué cambió hoy + próximo paso) y `ESCALERA.md` (el tracker: tachá el ítem que cumplió, mové "Nivel actual" + la barra, escribí el próximo paso; y si activaste un skill de uso, tachalo también en el catálogo "📦 Todo lo que trae el kit"). Creálos si no existen. La primera vez explicá en una línea para qué es cada uno: el `ESTADO` es para no escanear todo al arrancar; la `ESCALERA` es para que vos veas cuánto avanzaste.
+Si diagnosticaste o construiste algo, actualizá **los dos**: `ESTADO.md` (el tablero fino: modo + cliente + estado de sync + proyectos activos + qué cambió hoy + próximo paso) y `ESCALERA.md` (el tracker: tachá el ítem que cumplió, mové "Nivel actual" + la barra, escribí el próximo paso; y si activaste un skill de uso, tachalo también en el catálogo "📦 Todo lo que trae el kit"). Creálos si no existen. La primera vez explicá en una línea para qué es cada uno: el `ESTADO` es para no escanear todo al arrancar; la `ESCALERA` es para que vos veas cuánto avanzaste.
 
 Formato sugerido (corto):
 ```
@@ -228,6 +245,7 @@ Formato sugerido (corto):
 Nivel: 2
 Modo: aprender
 Cliente: cowork
+Sync: nube
 Checklist: identidad ✓ · 1er proyecto ✓ · 3+ proyectos ✗ · atajos ✗ · skill ✗ · rutina ✗
 Proyectos activos:
 - Gastos: al día
@@ -240,6 +258,7 @@ Proyectos activos:
 - Para tareas de un proyecto puntual: eso va en el proyecto, no acá.
 
 ## Output esperado
+- Check de arranque pasado antes de dejar laburar: carpeta sincronizada a la nube + apuntada con acceso (o riesgo avisado y pospuesto a pedido del usuario).
 - Primera vez: situación mapeada (a/b/c/d) + permiso de lectura ofrecido + modo + base armada.
 - Diagnóstico de 3 líneas con la checklist por detrás.
 - Micro-lección + UNA propuesta de próximo paso.
@@ -248,6 +267,7 @@ Proyectos activos:
 - Nada creado sin confirmación.
 
 ## Señales de que lo hiciste bien
+- La carpeta sincroniza a la nube y está apuntada con acceso: no lo dejaste arrancar en bolas ni en riesgo de perder todo.
 - El usuario sabe dónde está sin que lo encasilles en una etiqueta.
 - Hablaste con tu voz, pero respetaste su `como-trabajo` para sus tareas.
 - Aprendió el concepto del escalón, no solo hizo la tarea.

@@ -6,5 +6,6 @@ Nivel: 0
 Modo: <aprender | hacelo por mí | hacelo yo>
 Experiencia: <en bolas | avanzado>
 Cliente: <cowork | claude code>
+Sync: <nube | local (avisado)>
 Proyectos activos:
 Última vez: recién instalado.

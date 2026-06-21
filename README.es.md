@@ -22,8 +22,11 @@ El cambio se nota en la segunda sesión: ya no tenés que volver a explicar lo m
    (atajo si podés escribir: `/plugin marketplace add brunogiel/secondbrain-claude`).
 2. Instalá el plugin **secondbrain**
    (o escribí `/plugin install secondbrain@secondbrain-claude`).
-3. Abrí o creá una carpeta donde quieras que viva tu brain. Mejor si sincroniza por Drive, iCloud o Dropbox.
-4. Decí **"armame el sistema"** o usá `/second-brain-coach`.
+3. Abrí o creá una carpeta donde quieras que viva tu brain (Drive, iCloud o Dropbox).
+4. Usá uno de:
+   - `/second-brain-setup` — configuración inicial (idempotente, seguro de correr de nuevo)
+   - `/second-brain-coach` — el coach completo: te ubica y propone el próximo paso
+   - `/escalera` — chequeá tu progreso en cualquier momento
 
 El coach pregunta antes de crear archivos. No arma carpetas por atrás. En Cowork el plugin se actualiza solo.
 
@@ -36,10 +39,12 @@ curl -fsSL https://raw.githubusercontent.com/brunogiel/secondbrain-claude/main/i
 Después abrí la carpeta donde querés trabajar y escribí:
 
 ```text
-/second-brain-coach
+/second-brain-setup   # configuración inicial (idempotente)
+/second-brain-coach   # el coach completo: te ubica + propone el próximo escalón
+/escalera             # chequeá tu progreso cuando quieras
 ```
 
-El script instala el método global. No toca tu carpeta del brain.
+El script instala el método y los comandos de forma global. No toca tu carpeta del brain.
 
 ## Qué se instala
 

@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.14.0
+- **Dos comandos nuevos: `/second-brain-setup` y `/escalera`.** Inspirados en el patrón de Piero Sierra (SecondBrain KB).
+  - **`/second-brain-setup`** — entrada dedicada al setup inicial, separada del coach. Idempotente: puede correrse de nuevo para reconfigurar sin pisar lo existente. Muestra un diagnóstico claro (qué existe vs qué falta), pregunta lo mínimo indispensable y arma lo que falta con OK del usuario. Pensado para onboarding explícito o para el que quiere saber "qué tengo configurado".
+  - **`/escalera`** — vista rápida del progreso (nivel, barra, logros, próximo paso) sin entrar al flujo completo del coach. Si el usuario dice que ya hizo algo, lo tacha en `ESCALERA.md` en el acto.
+  - Disponibles en Cowork (plugin: `commands/`) y en Code (curl: `~/.claude/commands/`). `install.sh` ahora los copia automáticamente.
+- Tocados: `commands/second-brain-setup.md` (nuevo), `commands/escalera.md` (nuevo), `install.sh`, `VERSION`, `CHANGELOG.md`.
+
+## 2.13.4
+- **El coach hace un check de arranque del entorno antes de dejar laburar (fix #1 del debrief del workshop 2026-06-20).** En la primera entrega en vivo el cuello de botella nunca fue el concepto: fue el setup. Ahora el coach corre un **pre-flight** al tope del flujo, en toda invocación (también para un SB ya armado), que **avisa y guía, no bloquea**:
+  - **Check 1 — sync a la nube:** detecta por ruta absoluta si la carpeta del brain cae fuera de un root sincronizado (Drive / iCloud / Dropbox / OneDrive) — Desktop, Documents, Downloads, disco/partición local → 🚩 riesgo de perder todo. Avisa y ofrece moverla; si el usuario lo pospone, lo registra (`Sync: local (avisado)`) y no machaca de nuevo.
+  - **Check 2 — carpeta apuntada y con acceso:** corta el "arrancar en bolas" (sin working directory / sin acceso a la carpeta). Guía distinto según el cliente (Cowork: New task + acceso a la carpeta; Code: confirma el `cwd`/pregunta dónde está el brain).
+  - **Aclaración de UI de Cowork (cuando hay confusión):** New task ≠ la vieja sección "Proyectos"; y Habilidades (skills) vs Conectores (MCP).
+- **`ESTADO.md` suma el campo `Sync:`** (plantilla del kit + ejemplo del coach) para registrar el estado de sincronización y evitar repetir el aviso. Output esperado y Señales del coach actualizados.
+- Tocados: `skills/second-brain-coach/SKILL.md`, `kit/brain/ESTADO.md`, `VERSION`, `CHANGELOG.md`.
+
 ## 2.13.3
 - **Dos skills de uso actualizados desde sus versiones en uso real (no se toca ni el motor ni el brain).**
   - **`ppt-builder`:** se portaron las mejoras del orquestador de comunicación en uso. Nuevo: **bloqueo duro entre etapas** (no scaffoldear la siguiente aunque sobre contexto; material futuro → `[PENDIENTE]`), **regla de salida de la Etapa 1** (no adelantar índice/copy/estructura), **Copy partido en 3 sub-pasos** (draft → voz vía `redactar` → limpieza vía `anti-slop`) más consolidar las imágenes pendientes, las **slides emergen del storyboard** de Historia, y la Etapa 2 (Historia) fusiona "por qué importa (el stake)" con el storyboard de bloques. Fix: el camino de **Gamma** ahora aclara que no importa `.md` ni texto (solo paste o `.docx`); antes sugería un `.md` que no se puede subir.

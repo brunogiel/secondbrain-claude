@@ -25,7 +25,11 @@ You feel the difference in the second session: you do not have to explain the sa
 2. Install the **secondbrain** plugin
    (or type `/plugin install secondbrain@secondbrain-claude`).
 3. Open or create the folder where your brain should live. A synced folder is best: Drive, iCloud, or Dropbox.
-4. Say **"set up my system"** or use `/second-brain-coach`.
+4. Open or create the folder where your brain should live (a synced folder: Drive, iCloud, Dropbox).
+5. Use one of:
+   - `/second-brain-setup` — initial configuration (idempotent, safe to run again)
+   - `/second-brain-coach` — the full coach: locates you and proposes the next step
+   - `/escalera` — check your progress on the ladder at any time
 
 The coach asks before creating files. It does not build folders behind your back. In Cowork, the plugin updates itself.
 
@@ -38,10 +42,12 @@ curl -fsSL https://raw.githubusercontent.com/brunogiel/secondbrain-claude/main/i
 Then open the folder where you want to work and type:
 
 ```text
-/second-brain-coach
+/second-brain-setup   # initial setup (idempotent)
+/second-brain-coach   # full coach: locates you + proposes next step
+/escalera             # check your progress anytime
 ```
 
-The script installs the method globally. It does not touch your brain folder.
+The script installs the method and commands globally. It does not touch your brain folder.
 
 ## What gets installed
 
