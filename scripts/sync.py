@@ -20,7 +20,7 @@ corrrunla despues de editar una kit-skill, y/o como check en pre-commit / CI.
 import os
 import sys
 
-# comando -> kit-skill (los 10 del toolkit; sabe y sabe-coach NO mapean a una kit-skill)
+# comando -> kit-skill (los 11 del toolkit; sabe y sabe-coach NO mapean a una kit-skill)
 PAIRS = {
     "sabe-slop": "anti-slop",
     "sabe-write": "redactar",
@@ -32,6 +32,7 @@ PAIRS = {
     "sabe-doc": "documenta",
     "sabe-simple": "simple",
     "sabe-triage": "triage",
+    "sabe-verify": "verificar",
 }
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

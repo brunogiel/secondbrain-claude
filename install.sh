@@ -34,7 +34,7 @@ COACH_DIR="${SKILLS_DIR}/sabe-coach"          # el coach + sus piezas + el kit, 
 SKILLS_MOTOR=("sabe-coach")   # el único skill activo del motor (lo escanea el plugin)
 # actualizar es Code-only (en Cowork el plugin se autoactualiza): vive en motor-code/, no es skill del plugin,
 # pero este curl (para Code) lo instala global igual. migrar dejó de ser skill: es un doc del coach (migracion.md).
-SKILLS_USO=("redactar" "anti-slop" "crear-skill" "evaluar-skill" "auditar-sistema" "triage" "ppt-builder" "panel" "council" "prompt-optimizer" "documenta" "simple")  # kit/skills
+SKILLS_USO=("redactar" "anti-slop" "crear-skill" "evaluar-skill" "auditar-sistema" "triage" "ppt-builder" "panel" "council" "prompt-optimizer" "documenta" "simple" "verificar")  # kit/skills
 
 # --- el brain que se scaffoldea (desde kit/brain/) ---
 ROOT_FILES=("CLAUDE.md" "ESTADO.md" "ESCALERA.md" "AGENTS.md")
@@ -88,7 +88,7 @@ fetch "VERSION"      "coach/VERSION"
 fetch "CHANGELOG.md" "coach/CHANGELOG.md"
 
 # comandos slash (Code): se instalan en ~/.claude/commands/ para que aparezcan como /sabe, /sabe-coach y el toolkit /sabe-*
-COMMANDS=("sabe" "sabe-coach" "sabe-slop" "sabe-write" "sabe-panel" "sabe-council" "sabe-prompt" "sabe-deck" "sabe-audit" "sabe-doc" "sabe-simple" "sabe-triage")
+COMMANDS=("sabe" "sabe-coach" "sabe-slop" "sabe-write" "sabe-panel" "sabe-council" "sabe-prompt" "sabe-deck" "sabe-audit" "sabe-doc" "sabe-simple" "sabe-triage" "sabe-verify")
 for c in "${COMMANDS[@]}"; do fetch "commands/${c}.md" "commands/${c}.md"; done
 
 # NOTA: este script NO arma tu carpeta del brain. Eso lo hace el coach, charlando y

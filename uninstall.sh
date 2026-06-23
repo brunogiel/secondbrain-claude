@@ -16,7 +16,7 @@ set -euo pipefail
 SKILLS_DIR="${HOME}/.claude/skills"
 COMMANDS_DIR="${HOME}/.claude/commands"
 METHOD_SKILLS=("sabe-coach" "actualizar")   # migrar ya no es skill (es doc del coach); actualizar es Code-only
-METHOD_COMMANDS=("sabe" "sabe-coach" "sabe-slop" "sabe-write" "sabe-panel" "sabe-council" "sabe-prompt" "sabe-deck" "sabe-audit" "sabe-doc" "sabe-simple" "sabe-triage")   # el toolkit /sabe-* (Code: ~/.claude/commands/)
+METHOD_COMMANDS=("sabe" "sabe-coach" "sabe-slop" "sabe-write" "sabe-panel" "sabe-council" "sabe-prompt" "sabe-deck" "sabe-audit" "sabe-doc" "sabe-simple" "sabe-triage" "sabe-verify")   # el toolkit /sabe-* (Code: ~/.claude/commands/)
 
 echo ""
 echo "🧠  SABE: desinstalar el motor global"

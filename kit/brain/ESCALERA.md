@@ -97,6 +97,7 @@ Agentes 100% autónomos que actúan sin tu OK, auto-mejora de skills en loop cer
 - [ ] `ppt-builder` → `/sabe-deck` *(N5)*: arma un deck por etapas coordinando varios skills.
 - [ ] `auditar-sistema` → `/sabe-audit` *(N6)*: chequeo de salud del sistema (tipo sábado).
 - [ ] `documenta` → `/sabe-doc`: guarda lo durable de una conversación en su lugar.
+- [ ] `verificar` → `/sabe-verify`: el gate antes de mandar: chequea que el output cumpla lo pedido y fact-checkea sus datos.
 - [ ] `simple` → `/sabe-simple`: te baja el estado de la charla en simple cuando perdés el hilo.
 - [ ] `crear-skill` *(N3)*: te guía a armar tu primer skill propio (no tiene comando, lo abrís para aprender).
 - [ ] `triage` → `/sabe-triage` *(N4)*: el brief del día (mail + agenda + tareas por MCP).

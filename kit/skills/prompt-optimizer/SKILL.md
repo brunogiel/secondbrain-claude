@@ -23,6 +23,18 @@ El prompt sale **terminado**. Nunca dejás `[pegá acá]`, `[tu contenido]`, `{t
 
 Si algo es genuinamente desconocido y bloquea el prompt, **preguntale al usuario una sola cosa puntual** antes de entregar, en vez de dejar un blanco.
 
+## Modo spec: clarificar antes de entregar
+
+La IA es brillante en lo medible pero no tiene señal sobre tu **objetivo real**, tu **gusto** ni tu **contexto**: eso solo lo tenés vos. En vez de asumir y entregar un prompt que arrastra suposiciones, a veces conviene clarificar primero.
+
+**Se prende cuando:**
+- El usuario lo pide ("modo spec", "entrevistame", "preguntame lo que necesites primero", "vamos por partes").
+- **O** el pedido es demasiado vago para un buen prompt: falta el **objetivo** (la conclusión o decisión que el trabajo tiene que mover, no la tarea literal), el **gusto/criterio** (qué hace que el output esté bueno) o el **contexto** que la IA no puede inferir.
+
+**Qué hace:** hacé 1 a 3 preguntas clave (no un cuestionario), en orden **objetivo → gusto/criterio → contexto faltante**, esperá la respuesta, y recién ahí entregá el prompt final con esos datos adentro. Las preguntas van como texto normal; el bloque con el prompt viene después.
+
+Si el pedido ya trae objetivo + gusto + contexto suficientes, NO prendas modo spec: entregá directo.
+
 ## Las movidas que mejoran un prompt
 
 1. **Objetivo concreto.** Análisis, redacción, decisión, código, investigación, review, síntesis. Si el pedido es difuso, lo nombrás vos.
