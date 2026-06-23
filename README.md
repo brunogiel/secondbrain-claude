@@ -41,6 +41,7 @@ El plugin trae slash commands que funcionan apenas lo instalás, sin configurar 
 | `/sabe-prompt` | Convierte un pedido crudo en un prompt listo para pegar en cualquier chat de IA |
 | `/sabe-panel` | 2 a 5 revisores con miradas distintas sobre algo antes de mandarlo |
 | `/sabe-council` | Un concilio de 5 asesores para una decisión con peso |
+| `/sabe-verify` | El gate antes de mandar: chequea que el output cumpla lo pedido y fact-checkea sus datos |
 | `/sabe-deck` | Arma una presentación por etapas, de bruto a final |
 | `/sabe-audit` | Chequeo de salud de tu segundo cerebro |
 | `/sabe-doc` | Cierra la sesión: rutea todo lo durable a su lugar |
@@ -116,7 +117,7 @@ SABE es el mismo método, con nombre propio. Si lo instalaste antes (comandos `/
 ```bash
 curl -fsSL https://raw.githubusercontent.com/brunogiel/sabe/main/install.sh | bash
 rm -rf ~/.claude/skills/agentic-second-brain-coach
-rm -f  ~/.claude/commands/asb*.md
+for c in asb asb-coach asb-slop asb-write asb-prompt asb-panel asb-council asb-deck asb-audit asb-doc asb-simple asb-triage; do rm -f ~/.claude/commands/$c.md; done
 ```
 
 En Cowork: desinstalá el plugin viejo desde la UI y reinstalá con `/setup-cowork install sabe@sabe`.

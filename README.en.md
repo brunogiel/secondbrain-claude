@@ -41,6 +41,7 @@ The plugin ships slash commands that work the moment you install it, with no set
 | `/sabe-prompt` | Turns a rough ask into a paste-ready prompt for any AI chat |
 | `/sabe-panel` | 2 to 5 reviewers, different lenses, on something before you send it |
 | `/sabe-council` | A council of 5 advisors for a decision with real stakes |
+| `/sabe-verify` | The gate before you send: checks the output meets the ask and fact-checks its data |
 | `/sabe-deck` | Builds a presentation in stages, rough to final |
 | `/sabe-audit` | Health check of your second brain |
 | `/sabe-doc` | Closes a session: routes everything durable to its place |
@@ -116,7 +117,7 @@ SABE is the same method, now with its own name. If you installed it earlier (the
 ```bash
 curl -fsSL https://raw.githubusercontent.com/brunogiel/sabe/main/install.sh | bash
 rm -rf ~/.claude/skills/agentic-second-brain-coach
-rm -f  ~/.claude/commands/asb*.md
+for c in asb asb-coach asb-slop asb-write asb-prompt asb-panel asb-council asb-deck asb-audit asb-doc asb-simple asb-triage; do rm -f ~/.claude/commands/$c.md; done
 ```
 
 In Cowork: uninstall the old plugin from the UI and reinstall with `/setup-cowork install sabe@sabe`.
