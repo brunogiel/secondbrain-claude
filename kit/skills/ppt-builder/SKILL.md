@@ -11,7 +11,7 @@ description: >-
   skill de pptx en el Asset). NO es para un texto corto de una sola pasada (eso es redactar directo).
 ---
 
-# ppt-builder — armar un deck (y otras piezas) por etapas
+# ppt-builder: armar un deck (y otras piezas) por etapas
 
 > **Ejemplo de orquestador.** Este skill no escribe el copy ni genera los slides él mismo: coordina un proceso de 5 etapas y, en cada una, **llama a los skills que ya hacen ese trabajo** (`redactar` para la voz, `anti-slop` para limpiar, el skill de pptx para el asset). Es el patrón del Nivel 5: repartir y juntar, no rehacer.
 
@@ -54,7 +54,7 @@ Tres niveles por etapa: **skip** (no aplica o ya está; 1 línea y seguís), **l
 Guardá el perfil aprobado en el frontmatter del doc (`profundidad:` por etapa).
 
 ## Las 5 etapas
-**Etapa 0 — Kickoff + scaffold** `[DET]`
+**Etapa 0: Kickoff + scaffold** `[DET]`
 Reunir parámetros, proponer el perfil de profundidad, esperar OK. Crear `{BASE}/{SLUG}/` + `assets/` + `pieza.md` con frontmatter (`pieza`, `medio`, `objetivo`, `audiencia`, `profundidad` por etapa, `creado`).
 
 **Etapa 1 · Brief** `[LAT]` → appendea `## 1. Brief`
@@ -97,7 +97,7 @@ El entregable listo, 0 placeholders:
 - Varios medios → repetir Asset por medio (misma Historia, distinto asset). Checkpoint final → pieza terminada.
 
 ## Guía de estado (en cada checkpoint)
-> **📍 Dónde estamos:** Etapa {N}/5 — {nombre} ({profundidad})
+> **📍 Dónde estamos:** Etapa {N}/5: {nombre} ({profundidad})
 > **✅ Qué cerramos:** {1-2 bullets + quedó en `pieza.md` §{etapa}}
 > **⏭️ Qué sigue:** {próxima etapa + su profundidad propuesta}
 > **🙋 Qué necesito de vos:** {la decisión que destraba, o "nada, decime dale y sigo"}

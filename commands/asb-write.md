@@ -2,11 +2,68 @@
 description: Redacta o reescribe en tu voz. La primera vez te arma tu perfil de voz con un par de ejemplos tuyos (mails, mensajes); después escribe como vos.
 ---
 
-Redactá o reescribí lo que te pidan ($ARGUMENTS, o lo último que se haya hablado en esta conversación) en la voz de la persona.
+Redactá o reescribí lo que te pidan ($ARGUMENTS, o lo último que se haya hablado) en la voz de la persona. Seguí esto:
 
-Cargá y seguí el skill **redactar** del método. El kit viaja con el plugin o la instalación, no hace falta tenerlo en tu carpeta. Ubicá su `SKILL.md` en el primer lugar donde exista:
-1. `${CLAUDE_PLUGIN_ROOT}/kit/skills/redactar/SKILL.md` (Cowork)
-2. `~/.claude/skills/agentic-second-brain-coach/kit/skills/redactar/SKILL.md` (Claude Code)
-3. `kit/skills/redactar/SKILL.md` relativo a este comando (dev local)
+# redactar: escribir como vos, no como un robot
 
-Leelo entero y ejecutá lo que pide. Si no lo encontrás en ningún lado, avisá que el método todavía no está instalado y ofrecé correr `/asb-coach`.
+## Qué es
+Escribís en la voz del usuario, no en la tuya. Para eso necesitás conocer cómo escribe. La primera vez lo aprendés de textos suyos; después lo tenés guardado y lo reusás.
+
+## Qué lee y escribe
+- **Lee:** `2. Áreas/yo/mi-estilo.md` (el perfil de voz). Lo de texto que el usuario pegue como referencia.
+- **Escribe:** `mi-estilo.md`: la primera vez (cuando arma el perfil) y, después, solo si detecta un patrón nuevo que se repite, **con OK**. Nada más.
+
+## Flujo
+
+### Paso 1: ¿Ya conocés su voz? [DET]
+Fijate si existe `mi-estilo.md` con contenido real (no el stub vacío).
+- **Si está cargado:** leelo y saltá al Paso 4.
+- **Si está vacío:** andá al Paso 2 (es la primera vez).
+
+### Paso 2: Todavía no tengo tu voz, te la armo [LAT]
+Es la primera vez: no tenés tu perfil de voz cargado, así que todavía no puedo escribir como vos sin inventarlo. Explicáselo corto y ofrecé armarlo:
+> "Para escribir como vos y no como un robot, necesito conocer tu voz. Te la armo así: pasame 2 o 3 textos que hayas escrito vos (un mail, un WhatsApp, un post, lo que sea), saco tu tono y lo guardo en `mi-estilo.md` para siempre. La próxima vez ya escribo como vos sin pedirte nada."
+
+Esperá los textos. No inventes un estilo sin material real. Si la persona no quiere darte ejemplos ahora, decíselo claro: podés escribirle algo, pero va a sonar a asistente y no a ella hasta que arme su voz. Que elija.
+
+### Paso 3: Aprendé y guardá su voz [LAT]
+De esos textos, sacá el perfil:
+- **Idioma y registro:** ¿formal o informal? ¿voseo, tuteo? ¿coloquial?
+- **Ritmo:** ¿frases cortas y secas, o largas? ¿directo o vueltero?
+- **Vocabulario propio:** palabras y giros que repite.
+- **Muletillas y arranques:** cómo abre, cómo cierra.
+- **Qué evita:** signos, formalismos, emojis, etc.
+
+Escribí eso en `mi-estilo.md`. Mostráselo en 4-5 bullets y pedile que confirme o corrija:
+> "Esto aprendí de tu forma de escribir: <bullets>. ¿Le pego? ¿Cambio algo?"
+
+Ajustá con lo que diga.
+
+### Paso 4: Escribí en su voz [LAT]
+Ahora sí, escribí lo que pidió, siguiendo `mi-estilo.md`.
+- Si te falta info para el texto (a quién va, qué tiene que lograr), **preguntá**. No inventes datos.
+- Respetá su voz por encima de "sonar lindo". Mejor que suene a él que a un manual.
+
+### Paso 5: Pasada rápida anti-slop [DET]
+Antes de entregar, sacá lo que suena a IA:
+- Reframes vacíos tipo "no es X, es Y".
+- Relleno y puffery ("revolucionario", "potenciar", "en el mundo de hoy").
+- Frases armadas que él nunca diría.
+
+Si el texto es largo (300+ palabras), ofrecé pasarlo por el skill `anti-slop` completo.
+
+### Paso 6: El perfil aprende [LAT]
+Si al escribir notaste un patrón que se repite en sus textos (siempre mete tal muletilla, siempre arranca igual), ofrecé sumarlo a `mi-estilo.md`. Así el perfil mejora con el uso en vez de ser una foto del primer día. Con OK, no por las tuyas. Y ajustá el vocabulario al destinatario, no al promedio (si le escribe a alguien que no maneja la jerga, bajala).
+
+## Output esperado
+- El texto en la voz del usuario.
+- La primera vez, además: su perfil de estilo guardado en `mi-estilo.md`.
+
+## Cuándo NO usar
+- Para texto técnico o código (ahí la voz no importa).
+- Si el usuario quiere un tono distinto al suyo a propósito (decíselo y seguí su pedido).
+
+## Señales de que lo hiciste bien
+- El texto suena a él, no a vos.
+- No inventaste datos que no te dio.
+- La primera vez quedó su estilo guardado para no volver a preguntar.

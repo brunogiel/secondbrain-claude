@@ -1,22 +1,34 @@
 # Agentic Second Brain
 
-Claude arranca cada sesión sin saber quién sos, cómo trabajás ni dónde está lo importante. Agentic Second Brain es una carpeta de texto que lee al inicio, así deja de improvisar.
+Claude arranca cada sesión sin saber quién sos, cómo trabajás ni dónde está lo importante. Agentic Second Brain lo corta: una carpeta de texto plano que lee al inicio, así deja de improvisar.
 
-No es un segundo cerebro para que lo leas *vos*. Es un sistema operativo personal desde el que trabaja tu asistente: tu contexto, proyectos, skills y rutinas en archivos de texto, para que el agente sepa qué cargar y cuándo.
+A diferencia de un segundo cerebro clásico, este casi no lo leés vos. Tu asistente trabaja desde él: tu contexto, proyectos, skills y rutinas en archivos de texto, para que el agente sepa qué cargar y cuándo.
 
-Instalás un coach y ese coach arma el sistema con vos, de a un escalón. Sirve en **Cowork** y **Claude Code**. También lo puede usar **Codex** o cualquier agente que lea `AGENTS.md`.
+Instalás un coach y arma el resto con vos, de a un escalón. Sirve en **Cowork** y **Claude Code**; **Codex** y otros agentes usan la misma carpeta vía `AGENTS.md`.
+
+> **Idioma.** El coach habla en rioplatense (es la personalidad del método) y las carpetas base vienen con nombres en español que podés renombrar. Tu brain y tu contenido quedan en el idioma en que trabajes. README en inglés: [README.md](README.md).
 
 ---
 
-## Por qué funciona
+## La diferencia se nota en la segunda sesión
 
-El modelo genera texto. El cliente (Cowork, Claude Code, Codex) le da manos para leer y escribir archivos. Tu carpeta le da contexto: quién sos, qué proyectos tenés, qué reglas seguir y dónde buscar.
+La sentís la segunda vez que abrís Claude: ya no volvés a explicar el mismo contexto.
 
-El cambio se nota en la segunda sesión: ya no tenés que volver a explicar lo mismo.
+```text
+Sesión 1, sin brain:
+  Vos: soy diseñador freelance, mi stack es X, estoy con el rebrand de Acme,
+       el tono va relajado... (cada sesión, de cero)
 
-## El toolkit (listo el día cero)
+Sesión 2, con el brain:
+  Vos:    redactá el mail de novedades de Acme
+  Claude: (ya sabe quién sos, el proyecto, tu tono) Acá va un borrador...
+```
 
-Estos no los armás vos. El plugin trae un set de slash commands que funcionan apenas lo instalás, antes de configurar nada:
+Ese salto es todo el punto.
+
+## El toolkit, listo el día uno
+
+Estos no los armás vos. El plugin trae slash commands que funcionan apenas lo instalás, antes de configurar nada:
 
 | Comando | Qué hace |
 |---|---|
@@ -31,9 +43,9 @@ Estos no los armás vos. El plugin trae un set de slash commands que funcionan a
 | `/asb-doc` | Cierra la sesión: rutea todo lo durable a su lugar |
 | `/asb-simple` | ¿Perdiste el hilo? Estado en simple: dónde estamos, qué hacés vos, qué sigo yo |
 
-Esta es la capa horizontal: herramientas genéricas que sirven igual para todos. El coach (`/asb-coach`) arma la capa vertical: tus proyectos, tu identidad y tus propias skills. Usar estas herramientas es además la forma más rápida de entender qué es un skill antes de armar el tuyo.
+Son herramientas de fábrica, sirven igual para todos. El coach (`/asb-coach`) arma la parte que es tuya: tus proyectos, tu identidad y tus propias skills. (Un *skill* es una receta guardada que dispara una frase. Usar estas es la forma más rápida de ver qué es uno antes de armar el tuyo.)
 
-Funcionan como comandos en Cowork y en Claude Code, sin configurar nada. En Cowork además las podés disparar describiendo lo que querés.
+Corren como slash commands en Cowork y en Claude Code, sin configurar nada. En Cowork además las podés disparar describiendo lo que querés.
 
 ## Instalación
 
@@ -45,8 +57,8 @@ Funcionan como comandos en Cowork y en Claude Code, sin configurar nada. En Cowo
    (o escribí `/plugin install agentic-second-brain@agentic-second-brain`).
 3. Abrí o creá una carpeta donde quieras que viva tu brain (Drive, iCloud o Dropbox).
 4. Usá uno de:
-   - `/asb` — el conserje: tu toolkit y dónde vas parado (empezá por acá)
-   - `/asb-coach` — el coach: arma tu sistema, te ubica y propone el próximo paso
+   - `/asb` (empezá por acá): el conserje, con tu toolkit y dónde vas parado
+   - `/asb-coach`: el coach que arma tu sistema, te ubica y propone el próximo paso
 
 El coach pregunta antes de crear archivos. No arma carpetas por atrás. En Cowork el plugin se actualiza solo.
 
@@ -56,41 +68,46 @@ El coach pregunta antes de crear archivos. No arma carpetas por atrás. En Cowor
 curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/install.sh | bash
 ```
 
-Después abrí la carpeta donde querés trabajar y escribí:
+Instala el método y los comandos de forma global y no toca tu carpeta del brain. Después abrí la carpeta donde querés trabajar y escribí:
 
 ```text
 /asb        # el conserje: tu toolkit + dónde vas parado (empezá por acá)
 /asb-coach  # el coach: arma tu sistema, te ubica + propone el próximo paso
 ```
 
-El script instala el método y los comandos de forma global. No toca tu carpeta del brain.
+## Qué NO es
+
+- **No es un cuaderno que leés vos.** A diferencia de Obsidian o Notion, el lector no sos vos. Es tu asistente.
+- **No es un framework de dev.** Métodos tipo BMAD corren un build de software; esto guarda tu contexto de trabajo entero. Conviven.
+- **No es Claude pelado.** Dejás de re-presentarte y re-explicar tus proyectos en cada sesión.
+
+## Por qué funciona
+
+El modelo genera texto. El cliente (Cowork, Claude Code, Codex) le da manos para leer y escribir archivos. Tu carpeta le da el contexto: quién sos, qué proyectos tenés, qué reglas seguir y dónde buscar. Tres ingredientes simples, sin magia.
 
 ## Qué se instala
 
-Hay dos partes:
+Dos partes, separadas:
 
-- **El método:** vive fuera de tu carpeta. En Cowork es un plugin. En Claude Code vive en `~/.claude/skills/`. Ahí están el coach, sus plantillas y el catálogo del kit.
-- **Tu brain:** vive en tu carpeta sincronizada. Ahí quedan tus archivos, tus proyectos, tu identidad y los skills que decidas usar.
+- **El método** vive fuera de tu carpeta. En Cowork es un plugin; en Claude Code vive en `~/.claude/skills/`. Ahí están el coach, las plantillas y el catálogo del kit.
+- **Tu brain** vive en tu carpeta sincronizada, y guarda solo lo tuyo.
 
-La carpeta final del usuario se ve así:
+Tu carpeta del brain termina viéndose así:
 
 ```text
-CLAUDE.md
-ESTADO.md
-ESCALERA.md
-AGENTS.md
-0. Inbox/
-1. Proyectos/
-2. Áreas/yo/
-3. Recursos/
-4. Archivo/
-skills/
+CLAUDE.md        # el router que tu asistente lee primero
+ESTADO.md        # tablero corto, para retomar rápido
+ESCALERA.md      # tu progreso + el catálogo del kit
+AGENTS.md        # puntero para agentes no-Claude
+0. Inbox/        # captura sin decidir
+1. Proyectos/    # proyectos, una carpeta cada uno
+2. Áreas/yo/     # quién sos, cómo trabajás, tu voz
+3. Recursos/     # referencias reusables
+4. Archivo/      # terminado o dormido
+skills/          # los skills que activaste
 ```
 
-El directorio `kit/` pertenece al método, no a tu brain final. Dentro del repo se divide así:
-
-- `kit/brain/`: plantillas para crear la carpeta base.
-- `kit/skills/`: catálogo de skills que el coach puede activar de a uno.
+El directorio `kit/` de este repo pertenece al método, no a tu brain: `kit/brain/` trae las plantillas de carpetas y `kit/skills/` el catálogo que el coach activa de a uno.
 
 ## Si ya tenés un sistema
 
@@ -106,17 +123,13 @@ La regla es simple: tiene que existir un router claro (`CLAUDE.md` o `AGENTS.md`
 - Las actualizaciones refrescan el método, no tu carpeta.
 - Desinstalar borra el motor, no tus datos.
 
-En Claude Code:
+Para desinstalar en Claude Code:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/uninstall.sh | SB_YES=1 bash
 ```
 
-En Cowork, desinstalá el plugin desde la UI o con:
-
-```text
-/plugin uninstall agentic-second-brain
-```
+En Cowork, desinstalá el plugin desde la UI o escribí `/plugin uninstall agentic-second-brain`.
 
 ## La escalera
 
@@ -129,7 +142,7 @@ No armás todo el primer día. Subís de a un paso.
 | **2** | Atajos frase -> carpeta | Decís "mis gastos" y sabe dónde mirar |
 | **3** | Primer skill propio | Una frase dispara una receta que repetís |
 | **4** | Rutina + herramienta conectada | El sistema puede leer mail, calendario o tareas |
-| **5** | Orquestador | Varios skills trabajan juntos |
+| **5** | Orquestador | Varios skills trabajan juntos en una tarea |
 | **6** | Auditoría y mejora | Revisás que el sistema no se degrade |
 | **Si programás** | Código separado del contexto | El repo tiene código; el brain guarda decisiones |
 
@@ -139,41 +152,11 @@ El coach lee `ESTADO.md` y `ESCALERA.md`, te dice dónde estás y propone un sol
 
 Tu brain son archivos de texto. Podés abrir la misma carpeta en Cowork, Claude Code, Codex o Cursor.
 
-Los skills de uso viven en `skills/` y se activan desde la tabla **Mis skills** de `CLAUDE.md`. Codex y Cursor llegan a esa tabla por `AGENTS.md`.
+Los skills de uso viven en `skills/` y se activan desde la tabla **Mis skills** de `CLAUDE.md`. Codex y Cursor llegan a esa tabla por `AGENTS.md`. Lo único específico de Claude es el motor de armado: `/asb-coach` y, en Claude Code, `actualizar`. Si usás otro agente, `AGENTS.md` trae un fallback para operar el sistema a mano.
 
-Lo único específico de Claude es el motor de armado: `/asb-coach` y, en Claude Code, `actualizar`. Si usás otro agente, `AGENTS.md` trae un fallback para operar el sistema a mano.
+## Skills
 
-## Qué trae
-
-- `CLAUDE.md`: router principal.
-- `ESTADO.md`: tablero corto para retomar rápido.
-- `ESCALERA.md`: tracker de progreso y catálogo del kit.
-- `AGENTS.md`: puntero para agentes no-Claude.
-- `0. Inbox/`: captura sin decidir.
-- `2. Áreas/yo/sobre-mi.md`: quién sos.
-- `2. Áreas/yo/como-trabajo.md`: cómo querés que trabaje el asistente.
-- `2. Áreas/yo/mi-estilo.md`: tu voz para redactar.
-- `2. Áreas/yo/MEMORIA.md`: hechos que valen para todo.
-- `3. Recursos/arquitectura-skills.md`: cómo armar skills.
-- `3. Recursos/anti-slop-writing.md`: reglas para limpiar textos con olor a IA.
-- `skills/`: skills activados por vos.
-
-Skills disponibles en el catálogo:
-
-- `redactar`: escribe en tu voz.
-- `anti-slop`: limpia textos.
-- `crear-skill`: arma un skill nuevo.
-- `evaluar-skill`: revisa un skill contra su propia rúbrica.
-- `auditar-sistema`: chequea la salud del brain.
-- `triage`: arma un brief del día con mail, agenda y tareas conectadas.
-- `ppt-builder`: coordina una pieza en etapas.
-- `panel`: trae varias miradas sobre un texto, propuesta o documento.
-- `council`: un concilio de asesores para una decisión con peso.
-- `prompt-optimizer`: convierte un pedido crudo en un prompt listo para pegar.
-- `documenta`: rutea lo durable de una sesión a su lugar canónico.
-- `simple`: un estado corto y en lenguaje simple de la conversación actual.
-
-La mayoría de las skills del catálogo mapean a un comando `/asb-*` (lo ves en `ESCALERA.md`). Algunas (`crear-skill`, `triage`, `evaluar-skill`) no tienen comando suelto: el coach las activa cuando llegás a su nivel.
+La mayoría de las skills del kit son el toolkit de arriba, disponibles como comandos `/asb-*` desde el día uno. El coach además puede activar cualquiera como skill editable en tu propia carpeta `skills/` a medida que subís. Tres más no tienen comando, y el coach las suma cuando llegás a su nivel: `crear-skill` (armá el tuyo), `triage` (un brief del día con mail, agenda y tareas conectadas) y `evaluar-skill` (medí un skill contra su rúbrica).
 
 ## Filosofía
 

@@ -87,7 +87,7 @@ Chequear cada retorno contra dos criterios de descarte: **(a)** no cita el artef
 
 ### Paso 4: presentar el mapa de ángulos [LAT]
 NO es un veredicto, es un mapa. Un bloque por reviewer (nombre de la lente + su lectura apretada, con las citas que trajo). Al final, dos líneas: **dónde coinciden** y **dónde se contradicen**.
-**Guardrail de neutralidad — aplica al MAPA, no a la bajada** (lo que separa a Panel de un skill que decide). El mapa es foto cruda de lo que vieron los reviewers; la opinión sintetizada va recién en la bajada (paso 5):
+**Guardrail de neutralidad, aplica al MAPA, no a la bajada** (lo que separa a Panel de un skill que decide). El mapa es foto cruda de lo que vieron los reviewers; la opinión sintetizada va recién en la bajada (paso 5):
 - Las coincidencias se reportan como cuenta cruda ("lo marcaron N de M lentes"), NO como peso ni como "esto hay que cambiarlo". Que tres coincidan es un dato, no un veredicto.
 - En el mapa, prohibido el lenguaje de recomendación: nada de "te recomiendo", "lo principal a cambiar es", "deberías". Si te sale sintetizar hacia una acción acá, frená: eso va en la bajada (paso 5), no en el mapa.
 

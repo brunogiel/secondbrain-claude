@@ -1,7 +1,6 @@
 .DS_Store
 *.log
 
-# Prefs locales privadas (symlinks al Second Brain, NO commitear)
+# Local symlinked files, never committed
 .brain
 CLAUDE.local.md
-_bmad/custom/*.user.toml

@@ -12,7 +12,7 @@ description: >
 Una pasada que mira si tu sistema sigue ordenado y te deja una lista corta de arreglos. Propone, no toca nada sin tu OK. Liviano: chequea estados, no lee todo el contenido.
 
 ## Qué lee y escribe
-- **Lee:** estados, no contenido completo — existencia de archivos, si tienen `<...>` sin llenar, conteos de carpetas, fechas de última modificación de los logs, las filas de la tabla "Mis skills" y "Atajos".
+- **Lee:** estados, no contenido completo: existencia de archivos, si tienen `<...>` sin llenar, conteos de carpetas, fechas de última modificación de los logs, las filas de la tabla "Mis skills" y "Atajos".
 - **Escribe:** NADA en la corrida. Solo después de tu OK, en otra pasada, toca lo que aprobaste ítem por ítem.
 
 ## Flujo
@@ -24,7 +24,7 @@ Una pasada que mira si tu sistema sigue ordenado y te deja una lista corta de ar
    - Proyectos terminados que deberían ir a `4. Archivo/`.
    - ¿`ESTADO.md` refleja la realidad?
 2. **[LAT]** Armá el reporte con el formato fijo de abajo (semáforo: verde sano / amarillo conviene tocar / rojo roto o viejo).
-3. **[LAT]** Proponé de 3 a 5 arreglos concretos, priorizados, incrementales (1 fila, 1 sección — no reorganización masiva). Esperá el OK para cada uno.
+3. **[LAT]** Proponé de 3 a 5 arreglos concretos, priorizados, incrementales (1 fila, 1 sección, no reorganización masiva). Esperá el OK para cada uno.
 
 ## Output esperado (formato fijo)
 ```

@@ -7,7 +7,7 @@ description: >
   de 300 palabras o más. No cambia lo que decís, saca lo que sobra.
 ---
 
-# anti-slop — sacarle el olor a IA a un texto
+# anti-slop: sacarle el olor a IA a un texto
 
 Una pasada de higiene. No reescribís el mensaje ni la voz: sacás los tics que delatan que lo escribió una máquina. **Una sola pasada, sin loops.**
 
@@ -67,7 +67,7 @@ Si suena forzado, simplificá.
 ## Notas
 - {lo que quedó a propósito y por qué, ej. "1 metáfora que pasa el test"}
 ```
-Si el texto ya está limpio: devolvé `## Limpio ✅ — no detecté patrones.` y no inventes correcciones.
+Si el texto ya está limpio: devolvé `## Limpio ✅ (no detecté patrones).` y no inventes correcciones.
 
 ## Cuándo NO usar
 - Textos de un par de líneas: no hace falta.

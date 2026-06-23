@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.21.0 (2026-06-22)
+- **Los 9 comandos del toolkit ahora son self-contained (contenido completo inline).** Antes eran wrappers finos que mandaban a leer `kit/skills/X/SKILL.md`: en el menú de Cowork se veían vacíos, y la indirección podía fallar si la ruta no resolvía (el riesgo #1 que marcó la ortiva). Ahora cada `/asb-*` trae el skill entero adentro: se ve completo y siempre anda, sin depender de resolver un path.
+- **Las copias del kit se conservan** (sirven para activar la skill en el brain del usuario y para portabilidad a Codex/Cursor). El body del comando y el del kit quedan idénticos: misma fuente, copiada en los dos runtimes (mantener en sync al editar).
+- **De paso, em-dashes limpiados** en las 9 skills del toolkit (las dos copias), salvo el literal de anti-slop que nombra el carácter a propósito.
+- Sin cambios en `/asb` (hub) ni `/asb-coach` (delega al skill del coach, que ya se ve completo como habilidad aparte).
+- **READMEs (EN/ES) reescritos para vender mejor** (tras un panel de 4 lentes): el toolkit y la prueba van arriba de la teoría, se sumó un antes/después de la "segunda sesión" (el gancho ahora tiene ejemplo), un bloque "qué NO es" (vs PKM / vs framework de dev / vs Claude pelado), se sacó la jerga "capa horizontal/vertical", y se dedupló la estructura de carpetas (se mostraba 3 veces) y el catálogo de skills (estaba arriba y abajo). Pasados por anti-slop: fuera el "no es X, es Y" del intro y em-dashes a dos puntos en español.
+- **`.gitignore` despersonalizado:** se sacó el comentario que nombraba el "Second Brain" y la línea `_bmad/custom/*.user.toml` (no aplica a este repo); queda solo el ignore genérico de `.brain` y `CLAUDE.local.md`.
+- Tocados: los 9 `commands/asb-{slop,write,prompt,panel,council,deck,audit,doc,simple}.md` (ahora full) + sus 9 `kit/skills/*/SKILL.md`, `README.md`, `README.es.md`, `.gitignore`, `VERSION`, `.claude-plugin/*`, `CHANGELOG.md`.
+
 ## 2.20.0 (2026-06-22)
 - **"Entrada y sistema" simplificada de 4 comandos a 2.** Se eliminaron `/asb-setup` y `/asb-escalera`: eran sub-funciones del coach disfrazadas de comando. El modelo queda **un hub + un motor**:
   - **`/asb`** (hub): muestra el toolkit y, si ya tenés sistema, baja una línea de dónde vas parado (absorbió el vistazo de `/asb-escalera`). Si no tenés, te manda a `/asb-coach`.
