@@ -47,7 +47,9 @@ El plugin trae slash commands que funcionan apenas lo instalás, sin configurar 
 | `/brain-doc` | Cierra la sesión: rutea todo lo durable a su lugar |
 | `/brain-simple` | ¿Perdiste el hilo? Estado en simple: dónde estamos, qué hacés vos, qué sigo yo |
 
-Las del toolkit son de fábrica y sirven igual para todos; `/brain-coach` arma la parte que es tuya (tus proyectos, tu identidad, tus propias skills). Un *skill* es una receta guardada que dispara una frase: usar estas es la forma más rápida de ver qué es uno antes de armar el tuyo.
+Las del toolkit son de fábrica y sirven igual para todos. `/brain-coach` es el motor: su trabajo es, sobre todo, ayudarte a **generar y mantener la arquitectura de tu segundo cerebro** (tus proyectos, tu identidad, tus propias skills), de a un escalón. Un *skill* es una receta guardada que dispara una frase; usar las del toolkit es la forma más rápida de ver qué es uno antes de armar el tuyo.
+
+A medida que subís de nivel, el coach suma skills que no están en el toolkit base: `/brain-triage` (tu brief del día, cuando conectás una fuente por MCP — mail, calendario o tareas), `crear-skill` (armá el tuyo) y `evaluar-skill` (medí un skill contra su rúbrica).
 
 Corren como slash commands en Cowork y en Claude Code, sin configurar nada. En Cowork además las podés disparar describiendo lo que querés.
 
@@ -69,14 +71,14 @@ Instala el método y los comandos de forma global y no toca tu carpeta del brain
 
 ## Por qué funciona
 
-El modelo genera texto. El cliente (Cowork, Claude Code, Codex) le da manos para leer y escribir archivos. Tu carpeta le da el contexto. El beneficio: tu ventana de contexto queda barata y despejada, porque en vez de cargar todo, el agente trae el archivo o dos que la tarea necesita.
+El modelo de fondo (Opus, Fable, Haiku, o alguno de ChatGPT) genera texto. El cliente (Cowork, Claude Code, Codex) le da manos para leer y escribir archivos. Tu carpeta le da el contexto. El beneficio: tu ventana de contexto queda barata y despejada, porque en vez de cargar todo, el agente trae el archivo o dos que la tarea necesita.
 
-Eso funciona por el layout. Es PARA (proyectos, áreas, recursos, archivo) más un inbox, con un router chico (`CLAUDE.md`) arriba que mapea dónde vive cada cosa. Los archivos son chicos y de un solo tema, así el router apunta y el agente trae, y vos podés abrir o editar cualquier pieza a mano sin romper nada.
+Eso funciona por el layout. **Este repo usa el método PARA** (proyectos, áreas, recursos, archivo) más un inbox, porque ordena todo por qué tan accionable es y le da al agente un mapa claro de dónde vive cada cosa. Arriba va un **índice maestro** chico (`CLAUDE.md`) que apunta a dónde está todo. Los archivos son chicos y de un solo tema, así el índice apunta y el agente trae solo lo que la tarea necesita, y vos podés abrir o editar cualquier pieza a mano sin romper nada.
 
-Dos partes quedan separadas. **El método** vive fuera de tu carpeta (un plugin en Cowork, `~/.claude/skills/` en Claude Code) y trae el coach, las plantillas y el catálogo del kit. **Tu brain** es tu carpeta sincronizada, y guarda solo lo tuyo. Termina viéndose así (nombres base, renombrá a gusto):
+Dos partes quedan separadas. **Este método** vive fuera de tu carpeta para no interferir con tus archivos (un plugin en Cowork, `~/.claude/skills/` en Claude Code) y trae el coach, las plantillas y el catálogo del kit. **Por otro lado, tu contexto vive en tu carpeta**, y guarda solo lo tuyo. Termina viéndose así (nombres base, renombrá a gusto):
 
 ```text
-CLAUDE.md        # el router que tu asistente lee primero
+CLAUDE.md        # el índice maestro que tu asistente lee primero
 ESTADO.md        # tablero corto, para retomar rápido
 ESCALERA.md      # tu progreso + el catálogo del kit
 AGENTS.md        # puntero para agentes no-Claude
@@ -92,7 +94,7 @@ skills/          # los skills que activaste
 
 No tenés que migrar. El coach mira tu estructura y la respeta.
 
-La regla es simple: tiene que existir un router claro (`CLAUDE.md` o `AGENTS.md`) que diga dónde vive cada cosa. Si tu estructura ya funciona, el coach no la renombra ni te fuerza PARA. Solo propone mejoras puntuales: inbox, atajos, logs de decisión, skills o estado de sesión.
+La regla es simple: tiene que existir un índice maestro claro (`CLAUDE.md` o `AGENTS.md`) que diga dónde vive cada cosa. Si tu estructura ya funciona, el coach no la renombra ni te fuerza PARA. Solo propone mejoras puntuales: inbox, atajos, logs de decisión, skills o estado de sesión.
 
 ## Qué toca y cómo deshacerlo
 
@@ -109,19 +111,6 @@ curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main
 ```
 
 En Cowork, desinstalá el plugin desde la UI o escribí `/plugin uninstall brain`.
-
-## Si venías de una versión anterior (SABE o ASB)
-
-Es el mismo método: ahora se llama **Agentic Second Brain** y el toolkit son los comandos `/brain-*`. Si lo instalaste antes, cuando se llamaba `/sabe-*` o `/asb-*`, limpiá lo viejo y reinstalá. Tu carpeta del brain no se toca.
-
-```bash
-# 1. limpiá cualquier versión vieja (sabe-* y asb-* en una sola pasada) — tu brain no se toca
-curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/uninstall.sh | SB_YES=1 bash
-# 2. instalá la versión nueva (/brain-*)
-curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/install.sh | bash
-```
-
-En Cowork: desinstalá el plugin viejo desde la UI y reinstalá con `/setup-cowork install brain@agentic-second-brain`.
 
 ## La escalera
 
@@ -144,10 +133,6 @@ El coach lee `ESTADO.md` y `ESCALERA.md`, te dice dónde estás y propone un sol
 
 Tu brain son archivos de texto. Podés abrir la misma carpeta en Cowork, Claude Code, Codex o Cursor. Los skills de uso viven en `skills/` y se disparan desde la tabla **Mis skills** de `CLAUDE.md`, que Codex y Cursor alcanzan por `AGENTS.md`. Como cada skill es una carpeta de texto plano, podés copiar la que quieras de `skills/` a otro agente y usarla ahí: no dependen de Claude. Lo único específico de Claude es el motor de armado (`/brain-coach`, y en Claude Code el updater `actualizar`); para otros agentes, `AGENTS.md` trae un fallback.
 
-## Skills
-
-La mayoría del kit es el toolkit de arriba. Sumá `/brain-triage` (tu brief del día) cuando conectes una fuente por MCP: mail, calendario o tareas. Dos skills más no tienen comando, y el coach las suma a medida que subís: `crear-skill` (armá el tuyo) y `evaluar-skill` (medí un skill contra su rúbrica).
-
 ## Filosofía
 
 - Propone, vos decidís.
@@ -156,9 +141,9 @@ La mayoría del kit es el toolkit de arriba. Sumá `/brain-triage` (tu brief del
 - Los skills duermen hasta que una frase los activa.
 - Tu carpeta queda limpia: solo lo tuyo.
 
-## Autor
+## Sobre mí
 
-Hecho por [Bruno Gielczynsky](https://www.linkedin.com/in/brunogiel/). Parte de una familia de métodos de AI instalables junto con [Empat.ia](https://github.com/brunogiel/Empat.ia).
+Hecho por [Bruno Gielczynsky](https://www.linkedin.com/in/brunogiel/): builder que arma negocios y sistemas personales con AI, y los empaqueta como métodos instalables para que otros los usen sin programar. Agentic Second Brain es parte de una familia junto con [Empat.ia](https://github.com/brunogiel/Empat.ia) (descubrimiento de usuarios con AI). ¿Lo probaste? Escribime por [LinkedIn](https://www.linkedin.com/in/brunogiel/) y contame qué armaste.
 
 ## Licencia
 
