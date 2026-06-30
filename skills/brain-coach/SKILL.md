@@ -1,5 +1,5 @@
 ---
-name: coach
+name: brain-coach
 description: >
   Es el punto de entrada de tu Agentic Second Brain: arma la base la primera vez, te ubica
   con una checklist, te enseña el concepto de cada escalón y te propone el próximo paso, uno
@@ -62,7 +62,7 @@ O sea: cuando coacheás, hablás con tu voz. Cuando el usuario te pide una tarea
   **Cómo ubicar tu `kit/` (probá en orden, no dependas de una sola ruta):**
   1. En **Cowork** suele estar en `${CLAUDE_PLUGIN_ROOT}/kit/`.
   2. Si esa variable no resuelve, buscá la carpeta `kit/` **relativa a tu propio `SKILL.md`** (está al lado de la carpeta `skills/` que te contiene, o sea `../../kit/`).
-  3. En **Code** está bundled en `~/.claude/skills/coach/kit/`.
+  3. En **Code** está bundled en `~/.claude/skills/brain-coach/kit/`.
   Si una ruta no existe, probá la siguiente antes de decir que falta. **Referenciá todo relativo, no por ruta fija** (`~/.claude/...` solo aplica en Code). La **migración** de Projects de Claude la hacés VOS siguiendo tu doc `migracion.md` (hermano de tu `SKILL.md`), no es un skill aparte. El **updater `actualizar`** es solo para Code (lo instala el curl en `~/.claude/skills/`); en Cowork el plugin se actualiza solo. Te usan por nombre (`/brain-coach`); no vivís en la carpeta del usuario.
 
 **Cómo se disparan los skills de uso (importante):** NO por `.claude/skills/`, sino por **la tabla "Mis skills" del `CLAUDE.md`**. El asistente lee el `CLAUDE.md` al arrancar; cuando el usuario dice una frase que matchea una fila (frase → skill), va y sigue `skills/<nombre>/SKILL.md`. Por eso `skills/` es una carpeta **a secas y visible** (sin `.claude/`, sin symlink), y por eso anda igual en **Claude Code, Cowork y Codex** (los tres leen el `CLAUDE.md`; en Codex vía `AGENTS.md`). El frontmatter del skill afina el disparo; la fila en la tabla es lo que lo hace existir para el asistente.
@@ -88,7 +88,7 @@ El catálogo es la fuente; lo que usa vive en `skills/`. Si edita su copia, es s
 ## Cowork o Code (adaptate al cliente)
 El brain del usuario vive entero en la carpeta sincronizada, así que es el mismo cerebro abras donde abras. **En los dos clientes la base del brain la armás VOS con el coach, preguntando, nunca a la fuerza:** si la carpeta abierta todavía no es un Agentic Second Brain (no hay `ESTADO.md`/`ESCALERA.md`) y la persona no tiene una carpeta clara, **invitala a crear o elegir una** donde sincronice (Drive/iCloud/Dropbox) y preguntale antes de armar nada; **no le crees una carpeta ni archivos sin un "dale"**, y no pises lo que ya exista. Con su OK, copiás la base desde tu `kit/brain/` (ver Bootstrap). Lo único que cambia entre clientes es **cómo se instaló el método** y dónde está tu kit:
 - **Cowork (sin terminal, el default):** el método se instaló como **plugin** (la persona agregó el marketplace y le dio Install, sin terminal); el kit viaja con vos (ubicalo como dice «Dónde vive cada cosa»). No corras comandos de shell; la parte mecánica hacela con tus herramientas. (El plugin se actualiza solo: en Cowork no hace falta `actualizar` a mano.)
-- **Claude Code (terminal, más avanzado):** la persona corrió el `install.sh`, que dejó el motor global en `~/.claude/skills/` y bundleó el kit en `~/.claude/skills/coach/kit/`, pero **NO armó la carpeta del brain** (eso lo hacés vos con ella, igual que en Cowork). Acá cobra sentido la rama "si programás" (split código/contexto) y los scripts de verdad.
+- **Claude Code (terminal, más avanzado):** la persona corrió el `install.sh`, que dejó el motor global en `~/.claude/skills/` y bundleó el kit en `~/.claude/skills/brain-coach/kit/`, pero **NO armó la carpeta del brain** (eso lo hacés vos con ella, igual que en Cowork). Acá cobra sentido la rama "si programás" (split código/contexto) y los scripts de verdad.
 - **Migrar de Cowork a Code = abrir la misma carpeta en Code.** No hay migración: el cerebro ya está en la carpeta.
 - **Y más allá de Claude:** el *cerebro* (carpetas, identidad, proyectos) **y los skills de uso** son portables: los skills viven en `skills/` y se disparan por la tabla "Mis skills" del `CLAUDE.md`, que leen Codex/Cursor igual (vía el `AGENTS.md` que apunta al `CLAUDE.md`). Lo único atado a Claude es el *motor de armado* (el comando `/brain-coach`; en Code, además el updater `actualizar`). El harness es las manos; el cerebro es del usuario.
 

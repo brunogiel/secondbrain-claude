@@ -64,4 +64,4 @@ Tareas que se ejecutan en horario, sin que estés. (Vacío hasta que armes la pr
 El código vive en su repo (`~/Code/<proyecto>/`); el contexto se queda acá. En el repo, un `CLAUDE.md` corto apunta de vuelta. Si no programás, ignorá esto. Detalle: pedíselo al coach.
 
 ---
-> El método (doctrina, plantillas, versión) vive global con el coach (`~/.claude/skills/coach/`), **no en esta carpeta**. Tu carpeta es solo tuya. Para crecer, escribí **`/brain-coach`**.
+> El método (doctrina, plantillas, versión) vive global con el coach (`~/.claude/skills/brain-coach/`), **no en esta carpeta**. Tu carpeta es solo tuya. Para crecer, escribí **`/brain-coach`**.

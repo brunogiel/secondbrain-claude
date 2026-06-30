@@ -132,7 +132,7 @@ Después armá **el tuyo**: algo que repitas de verdad (regla de 3). Va en `skil
 Abajo, la anatomía de un skill como modelo de lo que tiene que tener cualquiera (tomamos `actualizar`, el updater de Code, como muestra):
 
 **Qué hace (el patrón a copiar):**
-1. **[DET]** Leer la versión publicada del kit (el archivo `VERSION` del repo) y compararla con la instalada (`~/.claude/skills/coach/VERSION`).
+1. **[DET]** Leer la versión publicada del kit (el archivo `VERSION` del repo) y compararla con la instalada (`~/.claude/skills/brain-coach/VERSION`).
 2. **[LAT]** Si hay una nueva, contarte qué cambió (del `CHANGELOG`) y preguntarte: *"¿te la instalo?"*.
 3. **[DET]** Si decís que sí, bajar lo nuevo.
 
@@ -152,7 +152,7 @@ description: >
 # actualizar: bajar las mejoras del kit
 
 ## Flujo
-1. [DET] Leé la versión publicada (VERSION del repo) y la instalada (~/.claude/skills/coach/VERSION).
+1. [DET] Leé la versión publicada (VERSION del repo) y la instalada (~/.claude/skills/brain-coach/VERSION).
 2. [LAT] Si la publicada es más nueva: mostrá qué cambió (CHANGELOG) y preguntá "¿te la instalo?".
 3. [DET] Con el OK: bajá los archivos nuevos y actualizá la VERSION instalada.
 

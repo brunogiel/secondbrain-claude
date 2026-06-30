@@ -30,8 +30,8 @@ RAW="https://raw.githubusercontent.com/${REPO}/${BRANCH}"
 
 # --- el método (global) ---
 SKILLS_DIR="${HOME}/.claude/skills"
-COACH_DIR="${SKILLS_DIR}/coach"          # el coach + sus piezas + el kit, bundled (global, mismo nombre que el plugin)
-MOTOR_SRC="coach"                        # el skill motor en el repo (skills/coach); en el plugin se ve brain:coach
+COACH_DIR="${SKILLS_DIR}/brain-coach"          # el coach + sus piezas + el kit, bundled (global)
+MOTOR_SRC="brain-coach"                        # el skill motor en el repo (skills/brain-coach)
 SKILLS_USO=("redactar" "anti-slop" "crear-skill" "evaluar-skill" "auditar-sistema" "triage" "ppt-builder" "panel" "council" "prompt-optimizer" "documenta" "simple" "verificar")  # kit/skills
 
 # --- el brain que se scaffoldea (desde kit/brain/) ---
@@ -71,7 +71,7 @@ for f in "${RECURSOS[@]}";  do fetch "kit/brain/recursos/${f}"  "kit/brain/recur
 fetch "kit/brain/inbox/INBOX.md" "kit/brain/inbox/INBOX.md"
 # kit/skills (catálogo de skills de uso): se bundlea con el coach
 for s in "${SKILLS_USO[@]}"; do fetch "kit/skills/${s}/SKILL.md" "kit/skills/${s}/SKILL.md"; done
-# el motor (skills/coach en el repo)
+# el motor (skills/brain-coach en el repo)
 fetch "skills/${MOTOR_SRC}/SKILL.md" "motor/${MOTOR_SRC}/SKILL.md"
 # actualizar (Code-only): vive en motor-code/, lo bajamos para instalarlo global en Code
 fetch "motor-code/actualizar/SKILL.md" "motor/actualizar/SKILL.md"
@@ -85,10 +85,11 @@ fetch "skills/${MOTOR_SRC}/migracion.md"          "coach/migracion.md"
 fetch "VERSION"      "coach/VERSION"
 fetch "CHANGELOG.md" "coach/CHANGELOG.md"
 
-# comandos slash (Code): se instalan en ~/.claude/commands/ con prefijo brain- para no chocar
-# con comandos genéricos. En el plugin (Cowork) se ven como brain:coach (sin prefijo redundante).
+# comandos slash: los archivos del repo YA vienen con prefijo brain- (commands/brain-coach.md, …) para
+# que en Cowork se vean /brain-coach. Clave: Cowork muestra el comando por su NOMBRE DE ARCHIVO, no por
+# el namespace del plugin — un archivo pelado se vería /coach (genérico). Por eso van prefijados en el repo.
 CONSERJE="brain"                                                                                              # commands/brain.md → /brain
-TOOLKIT=("coach" "slop" "write" "panel" "council" "prompt" "deck" "audit" "doc" "simple" "triage" "verify" "newskill" "evalskill")   # commands/<x>.md → /brain-<x>
+TOOLKIT=("brain-coach" "brain-slop" "brain-write" "brain-panel" "brain-council" "brain-prompt" "brain-deck" "brain-audit" "brain-doc" "brain-simple" "brain-triage" "brain-verify" "brain-newskill" "brain-evalskill")   # commands/brain-<x>.md → /brain-<x>
 fetch "commands/${CONSERJE}.md" "commands/${CONSERJE}.md"
 for c in "${TOOLKIT[@]}"; do fetch "commands/${c}.md" "commands/${c}.md"; done
 
@@ -98,7 +99,7 @@ for c in "${TOOLKIT[@]}"; do fetch "commands/${c}.md" "commands/${c}.md"; done
 
 # ============ EL MÉTODO (global, ~/.claude/skills/) ============
 mkdir -p "$SKILLS_DIR"
-# el motor (coach) → instalado como ~/.claude/skills/coach/
+# el motor (coach) → instalado como ~/.claude/skills/brain-coach/
 mkdir -p "$COACH_DIR"
 cp "${TMP}/motor/${MOTOR_SRC}/SKILL.md" "${COACH_DIR}/SKILL.md"
 # actualizar (Code-only) global, con su script
@@ -120,11 +121,11 @@ rm -rf "${COACH_DIR}/kit.new"
 cp -R "${TMP}/kit" "${COACH_DIR}/kit.new"
 rm -rf "${COACH_DIR}/kit"
 mv "${COACH_DIR}/kit.new" "${COACH_DIR}/kit"
-# comandos slash (Code-only): ~/.claude/commands/ con prefijo brain-
+# comandos slash (Code-only): ~/.claude/commands/ (los archivos ya vienen con prefijo brain-, copia 1:1)
 COMMANDS_DIR="${HOME}/.claude/commands"
 mkdir -p "$COMMANDS_DIR"
 cp "${TMP}/commands/${CONSERJE}.md" "${COMMANDS_DIR}/${CONSERJE}.md"                          # /brain (el conserje)
-for c in "${TOOLKIT[@]}"; do cp "${TMP}/commands/${c}.md" "${COMMANDS_DIR}/brain-${c}.md"; done   # /brain-<x>
+for c in "${TOOLKIT[@]}"; do cp "${TMP}/commands/${c}.md" "${COMMANDS_DIR}/${c}.md"; done     # /brain-<x>
 echo "  ✓ método instalado global (motor + kit de ${#SKILLS_USO[@]} skills) en ~/.claude/skills/"
 echo "  ✓ comandos instalados en ~/.claude/commands/ (toolkit /brain-* completo)"
 

@@ -59,7 +59,7 @@ They run as slash commands in both Cowork and Claude Code, with no setup. In Cow
 
 ### Cowork (no terminal)
 
-1. In the app, go to **Customize → Plugins → Add marketplace** and paste `brunogiel/agentic-second-brain`. Then install the **`brain`** plugin.
+1. In the app: **Customize → Plugins → Personal plugins → "+" → Add marketplace → "Add from a repository"**, paste `brunogiel/agentic-second-brain` and hit **Install** on the **`brain`** plugin. (`/setup-cowork` and `/plugin` don't work here: the first is the official registry, the second is Claude Code terminal.)
 2. Open or create the folder where your brain should live. A synced folder is best: Drive, iCloud, or Dropbox.
 3. Type `/brain` to start. It asks before creating anything, never builds folders behind your back, and in Cowork the plugin updates itself.
 

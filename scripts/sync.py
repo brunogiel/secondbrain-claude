@@ -20,22 +20,23 @@ corrrunla despues de editar una kit-skill, y/o como check en pre-commit / CI.
 import os
 import sys
 
-# comando -> kit-skill (los 13 del toolkit; brain y coach NO mapean a una kit-skill).
-# Los comandos viven con nombre pelado en el repo (commands/slop.md) para verse brain:slop en el plugin.
+# comando -> kit-skill (los 13 del toolkit; brain y brain-coach NO mapean a una kit-skill).
+# Los comandos viven con prefijo brain- en el repo (commands/brain-slop.md) porque Cowork muestra
+# el comando por su nombre de archivo (/brain-slop), no por el namespace del plugin.
 PAIRS = {
-    "slop": "anti-slop",
-    "write": "redactar",
-    "prompt": "prompt-optimizer",
-    "panel": "panel",
-    "council": "council",
-    "deck": "ppt-builder",
-    "audit": "auditar-sistema",
-    "doc": "documenta",
-    "simple": "simple",
-    "triage": "triage",
-    "verify": "verificar",
-    "newskill": "crear-skill",
-    "evalskill": "evaluar-skill",
+    "brain-slop": "anti-slop",
+    "brain-write": "redactar",
+    "brain-prompt": "prompt-optimizer",
+    "brain-panel": "panel",
+    "brain-council": "council",
+    "brain-deck": "ppt-builder",
+    "brain-audit": "auditar-sistema",
+    "brain-doc": "documenta",
+    "brain-simple": "simple",
+    "brain-triage": "triage",
+    "brain-verify": "verificar",
+    "brain-newskill": "crear-skill",
+    "brain-evalskill": "evaluar-skill",
 }
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
